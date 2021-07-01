@@ -4,6 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { StateProvider } from './state';
 import { useTheme } from './assets';
 import { Hero, TopBar, AboutDrawer, List, Footer } from './components';
+import heroImg from './assets/hero.jpg';
 
 export default function App() {
 	const theme = useTheme();
@@ -12,7 +13,7 @@ export default function App() {
 		<StateProvider>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<Hero imageSrc="https://source.unsplash.com/random/1920x1080" />
+				<Hero imageSrc={heroImg} />
 				<TopBar />
 				<AboutDrawer />
 				<List />
