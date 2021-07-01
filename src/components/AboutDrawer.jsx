@@ -63,8 +63,8 @@ export default function AboutDrawer() {
 					The Visuddhimagga, translated as “Path to Purification”, is an extensive
 					commentary on the fundamental aspects of Buddhist practise and theory as
 					understood within the classical Theravada commentarial system. It was assembled,
-					edited, and translated into Pali by Bhante Buddhaghosa in the 5th century. The
-					English translations used here are by Bhikkhu Nānamoli in the 20th century.
+					edited, and translated into Pali by Bhante Buddhaghosa in the 5th century. It
+					was translated from Pali into English by Bhikkhu Nānamoli in the 20th century.
 				</Typography>
 				<Typography paragraph>
 					You can freely{' '}
