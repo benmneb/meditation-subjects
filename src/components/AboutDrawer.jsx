@@ -74,8 +74,9 @@ export default function AboutDrawer() {
 						href="https://learn.dhammanet.org/courses/introductory/the-visuddhimagga-for-sutta-lovers/"
 						target="_blank"
 					>
-						four part video course.
+						four part video course
 					</Link>
+					.
 				</Typography>
 			</Box>
 		</SwipeableDrawer>
