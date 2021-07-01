@@ -1,7 +1,8 @@
-import { Box, Link, SwipeableDrawer, Typography } from '@material-ui/core';
+import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from '../state';
+import { Link } from '../utils/';
 
 const useStyles = makeStyles({
 	drawerPaper: {
@@ -62,17 +63,23 @@ export default function AboutDrawer() {
 					The Visuddhimagga, translated as “Path to Purification”, is an extensive
 					commentary on the fundamental aspects of Buddhist practise and theory as
 					understood within the classical Theravada commentarial system. It was assembled,
-					edited, and translated by Bhante Buddhaghosa in the 5th century.
+					edited, and translated into Pali by Bhante Buddhaghosa in the 5th century. The
+					English translations used here are by Bhikkhu Nānamoli in the 20th century.
 				</Typography>
 				<Typography paragraph>
 					You can freely{' '}
-					<Link href="https://static.sirimangalo.org/vism/" target="_blank">
-						download the Vishuddhimagga to read
+					<Link
+						href="https://archive.org/details/Visuddhimagga-ThePathOfPurification"
+						target="_blank"
+						rel="noopener"
+					>
+						read the Vishuddhimagga online
 					</Link>{' '}
 					or learn more about it in a{' '}
 					<Link
 						href="https://learn.dhammanet.org/courses/introductory/the-visuddhimagga-for-sutta-lovers/"
 						target="_blank"
+						rel="noopener"
 					>
 						four part video course
 					</Link>
