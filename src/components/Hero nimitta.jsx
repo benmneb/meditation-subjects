@@ -38,6 +38,7 @@ export default function Hero() {
 
 	const [offset, setOffset] = useState(0);
 
+	// enlarge nimitta on scroll
 	useEffect(() => {
 		function handleScroll() {
 			setOffset(window.pageYOffset);
