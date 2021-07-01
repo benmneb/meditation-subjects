@@ -42,18 +42,6 @@ export default function AboutDrawer() {
 						About
 					</Typography>
 				</Box>
-				<Typography paragraph>about about about...</Typography>
-				<Box component="figure" margin={2}>
-					<Typography component="blockquote">"awesome quote"</Typography>
-					<Typography
-						paragraph
-						variant="subtitle2"
-						component="figcaption"
-						className={styles.figCaption}
-					>
-						- The Buddha
-					</Typography>
-				</Box>
 				<Typography paragraph>
 					This site is my attempt to simplify and make more accessible the meditation
 					instructions in the Visuddhimagga, while helping me study the commentaries to
@@ -69,6 +57,25 @@ export default function AboutDrawer() {
 						file an issue or make a pull request on GitHub
 					</Link>
 					.
+				</Typography>
+				<Typography paragraph>
+					The Visuddhimagga, translated as “Path to Purification”, is an extensive
+					commentary on the fundamental aspects of Buddhist practise and theory as
+					understood within the classical Theravada commentarial system. It was assembled,
+					edited, and translated by Bhante Buddhaghosa in the 5th century.
+				</Typography>
+				<Typography paragraph>
+					You can freely{' '}
+					<Link href="https://static.sirimangalo.org/vism/" target="_blank">
+						download the Vishuddhimagga to read
+					</Link>{' '}
+					or learn more about it in a{' '}
+					<Link
+						href="https://learn.dhammanet.org/courses/introductory/the-visuddhimagga-for-sutta-lovers/"
+						target="_blank"
+					>
+						four part video course.
+					</Link>
 				</Typography>
 			</Box>
 		</SwipeableDrawer>
