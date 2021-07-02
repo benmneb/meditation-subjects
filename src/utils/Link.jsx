@@ -7,7 +7,10 @@ const useStyles = makeStyles((theme) => ({
 		boxShadow: `inset 0 -3px 0 ${theme.palette.primary.main}`,
 		transition: `all ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
 		'&:hover': {
-			color: theme.palette.type === 'dark' && theme.palette.primary.contrastText,
+			color:
+				theme.palette.type === 'dark'
+					? theme.palette.primary.contrastText
+					: theme.palette.text.primary,
 			boxShadow: `inset 0 -1.15rem 0 ${theme.palette.primary.main}`
 		}
 	}
