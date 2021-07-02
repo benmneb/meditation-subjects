@@ -52,7 +52,7 @@ export default function Hero() {
 	}, [offset]);
 
 	return (
-		<Box component="header" className={styles.header}>
+		<Box component="section" className={styles.header}>
 			<Box
 				className={styles.kasina}
 				style={{ width: offset + 500, height: offset + 500 }}

@@ -73,7 +73,7 @@ export default function Hero(props) {
 	}
 
 	return (
-		<Box component="header" className={styles.header}>
+		<Box component="section" className={styles.header}>
 			<Fade in={!imageLoading} timeout={fadeInDuration}>
 				<img
 					src={heroImg}
