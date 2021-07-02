@@ -14,6 +14,14 @@ export function useTheme() {
 						type: prefersDarkMode ? 'dark' : 'light',
 						primary: { main: '#FF9933' },
 						secondary: { main: '#3399FF' }
+					},
+					shape: {
+						borderRadius: 16
+					},
+					typography: {
+						button: {
+							textTransform: 'none'
+						}
 					}
 				})
 			),
