@@ -1,46 +1,77 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import {
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	CardHeader,
+	Typography
+} from '@material-ui/core';
 
-const useStyles = makeStyles({
-	root: {
-		maxWidth: 275,
+const useStyles = makeStyles((theme) => ({
+	wrapper: {
+		padding: 0
+	},
+	card: {
+		width: '100%',
+		height: 305,
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		textAlign: 'center'
+		justifyContent: 'space-between',
+		textAlign: 'center',
+		color: (props) => theme.palette.getContrastText(props.bgColor),
+		backgroundColor: (props) => props.bgColor,
+		[theme.breakpoints.only('xs')]: {
+			height: 250
+		}
 	},
-	title: {
-		fontSize: 14
+	header: {
+		color: (props) => theme.palette.getContrastText(props.bgColor),
+		fontSize: 14,
+		opacity: '0.2'
 	},
-	category: {
-		marginBottom: 12
+	content: {
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'space-evenly',
+		height: '100%'
+	},
+	chapter: {
+		color: (props) => theme.palette.getContrastText(props.bgColor),
+		marginBottom: 12,
+		opacity: '0.7',
+		[theme.breakpoints.only('xs')]: {
+			display: 'none'
+		}
+	},
+	actions: {
+		color: (props) => theme.palette.getContrastText(props.bgColor),
+		padding: theme.spacing(1, 1.5)
 	}
-});
+}));
 
-export default function MeditationCard(props) {
-	const styles = useStyles();
+export default function MeditationCard({ data, ...props }) {
+	const styles = useStyles(props);
 
 	return (
-		<Card className={styles.root} variant="outlined">
-			<CardContent>
-				<Typography className={styles.title} color="textSecondary" gutterBottom>
-					{props.number}
-				</Typography>
-				<Typography variant="h5" component="h2">
-					Meditation Type
-				</Typography>
-				<Typography className={styles.category} color="textSecondary">
-					category
-				</Typography>
-			</CardContent>
-			<CardActions>
-				<Button size="small">Learn More</Button>
-			</CardActions>
-		</Card>
+		<Button className={styles.wrapper}>
+			<Card className={styles.card} variant="outlined">
+				<CardHeader title={props.number} disableTypography className={styles.header} />
+				<CardContent className={styles.content}>
+					<Typography variant="h5" component="h2">
+						{data.shortName}
+					</Typography>
+					<Typography className={styles.chapter} color="textSecondary">
+						in {data.chapter}
+					</Typography>
+				</CardContent>
+				<CardActions>
+					<Typography variant="button" className={styles.actions}>
+						Learn More
+					</Typography>
+				</CardActions>
+			</Card>
+		</Button>
 	);
 }

@@ -1,7 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
+// import randomMC from 'random-material-color';
+
 import { MeditationCard } from './index';
+import { subjects } from '../data';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -21,11 +24,14 @@ export default function List() {
 
 	return (
 		<Box className={styles.root}>
-			{new Array(40).fill(<MeditationCard />).map((card, index) => (
-				<MeditationCard number={index + 1} key={index} />
+			{subjects.map((subject, index) => (
+				<MeditationCard
+					number={index + 1}
+					key={subject.id}
+					data={subject}
+					bgColor={subject.color}
+				/>
 			))}
 		</Box>
 	);
 }
-
-// new Array(40).fill(<MeditationCard number={1} />)
