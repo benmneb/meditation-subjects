@@ -15,13 +15,14 @@ export function useTheme() {
 						primary: { main: '#FF9933' },
 						secondary: { main: '#3399FF' }
 					},
-					shape: {
-						borderRadius: 16
-					},
 					typography: {
+						fontFamily: ['Inter', 'sans-serif'].join(','),
 						button: {
 							textTransform: 'none'
 						}
+					},
+					shape: {
+						borderRadius: 16
 					}
 				})
 			),
