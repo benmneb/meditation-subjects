@@ -35,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'space-evenly',
-		height: '100%'
+		height: '100%',
+		maxHeight: 190
 	},
 	chapter: {
 		color: (props) => theme.palette.getContrastText(props.bgColor),
