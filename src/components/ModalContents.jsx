@@ -2,23 +2,17 @@ import { useState } from 'react';
 
 import {
 	Box,
-	Button,
 	Collapse,
 	ListItem,
-	ListItemIcon,
 	ListItemText,
 	List,
 	Divider,
 	AppBar,
 	Toolbar,
-	Typography
+	Typography,
+	IconButton
 } from '@material-ui/core';
-import {
-	CloseRounded,
-	ExpandLessRounded,
-	ExpandMoreRounded,
-	InboxRounded
-} from '@material-ui/icons';
+import { CloseRounded, ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from '../state';
@@ -26,9 +20,11 @@ import { useGlobalState } from '../state';
 const useStyles = makeStyles((theme) => ({
 	appBar: {
 		position: 'relative',
+		height: 100,
 		backgroundColor: (props) => props?.data?.color
 	},
 	toolbar: {
+		height: '100%',
 		color: (props) =>
 			props?.data?.color && theme.palette.getContrastText(props?.data?.color)
 	},
@@ -63,22 +59,17 @@ export default function ModalContents(props) {
 				<Toolbar disableGutters className={styles.toolbar}>
 					<Typography variant="h6" className={styles.title}>
 						{state?.subject?.longName}
+						<Box component="span" fontStyle="italic">
+							<Typography variant="body1">in {state?.subject?.chapter}</Typography>
+						</Box>
 					</Typography>
-					<Button
-						autoFocus
-						color="inherit"
-						onClick={handleCloseModal}
-						endIcon={<CloseRounded />}
-					>
-						Close
-					</Button>
+					<IconButton edge="end" color="inherit" autoFocus onClick={handleCloseModal}>
+						<CloseRounded />
+					</IconButton>
 				</Toolbar>
 			</AppBar>
 			<List>
 				<ListItem button onClick={() => toggleExpandSection(1)}>
-					<ListItemIcon>
-						<InboxRounded />
-					</ListItemIcon>
 					<ListItemText primary="Preliminary Work" secondary="secondary..." />
 					{open.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>
@@ -87,9 +78,6 @@ export default function ModalContents(props) {
 				</Collapse>
 				<Divider />
 				<ListItem button onClick={() => toggleExpandSection(2)}>
-					<ListItemIcon>
-						<InboxRounded />
-					</ListItemIcon>
 					<ListItemText
 						primary="Specific instructions for this one"
 						secondary="subtitle"
@@ -101,9 +89,6 @@ export default function ModalContents(props) {
 				</Collapse>
 				<Divider />
 				<ListItem button onClick={() => toggleExpandSection(3)}>
-					<ListItemIcon>
-						<InboxRounded />
-					</ListItemIcon>
 					<ListItemText primary="General Jhana Info" secondary="secondary..." />
 					{open.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>

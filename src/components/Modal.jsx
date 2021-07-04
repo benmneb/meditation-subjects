@@ -9,11 +9,12 @@ import { useGlobalState } from '../state';
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		position: 'absolute',
-		height: '95%',
+		height: '97%',
 		width: '100%',
 		margin: 0,
 		bottom: 0,
-		borderRadius: theme.spacing(2, 2, 0, 0)
+		borderRadius: theme.spacing(2, 2, 0, 0),
+		maxHeight: '100%'
 	}
 }));
 
