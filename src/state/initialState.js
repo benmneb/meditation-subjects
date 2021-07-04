@@ -1,3 +1,4 @@
 export const initialState = {
-	showAboutDrawer: false
+	showAboutDrawer: false,
+	subject: null
 };

@@ -7,6 +7,7 @@ import {
 	CardHeader,
 	Typography
 } from '@material-ui/core';
+import { useGlobalDispatch } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
@@ -55,8 +56,14 @@ const useStyles = makeStyles((theme) => ({
 export default function MeditationCard({ data, ...props }) {
 	const styles = useStyles(props);
 
+	const dispatch = useGlobalDispatch();
+
+	function handleClick() {
+		dispatch({ type: 'CHOOSE_SUBJECT', subject: data });
+	}
+
 	return (
-		<Button className={styles.wrapper}>
+		<Button className={styles.wrapper} onClick={handleClick}>
 			<Card className={styles.card} variant="outlined">
 				<CardHeader title={props.number} disableTypography className={styles.header} />
 				<CardContent className={styles.content}>
