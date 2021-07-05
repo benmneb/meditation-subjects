@@ -71,7 +71,7 @@ export default function MeditationCard({ data, ...props }) {
 						{data.shortName}
 					</Typography>
 					<Typography className={styles.chapter} color="textSecondary">
-						in {data.chapter}
+						in {data?.classification}
 					</Typography>
 				</CardContent>
 				<CardActions>
