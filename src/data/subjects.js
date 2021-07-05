@@ -95,28 +95,28 @@ export const subjects = [
 		shortName: 'Bloated Corpse',
 		longName: 'The Bloated Corpse',
 		chapter: 'Foulness Meditations',
-		color: brown[800] // TODO
+		color: brown[900]
 	},
 	{
 		id: 12,
 		shortName: 'Livid Corpse',
 		longName: 'The Livid Corpse',
 		chapter: 'Foulness Meditations',
-		color: lightGreen[800] // TODO
+		color: lightGreen[800]
 	},
 	{
 		id: 13,
 		shortName: 'Festering Corpse',
 		longName: 'The Festering Corpse',
 		chapter: 'Foulness Meditations',
-		color: lime[800] // TODO
+		color: lime[800]
 	},
 	{
 		id: 14,
 		shortName: 'Cut Up Corpse',
 		longName: 'The Cut Up Corpse',
 		chapter: 'Foulness Meditations',
-		color: grey[300] // TODO
+		color: grey[400]
 	},
 	{
 		id: 15,
@@ -130,14 +130,14 @@ export const subjects = [
 		shortName: 'Scattered Corpse',
 		longName: 'The Scattered Corpse',
 		chapter: 'Foulness Meditations',
-		color: yellow[800] // TODO
+		color: amber[700]
 	},
 	{
 		id: 17,
 		shortName: 'Hacked & Scattered Corpse',
 		longName: 'The Hacked & Scattered Corpse',
 		chapter: 'Foulness Meditations',
-		color: red[500] // TODO
+		color: deepOrange[500]
 	},
 	{
 		id: 18,
