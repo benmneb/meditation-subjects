@@ -31,8 +31,20 @@ const useStyles = makeStyles((theme) => ({
 	title: {
 		marginLeft: theme.spacing(2),
 		flex: 1
+	},
+	collapse: {
+		margin: theme.spacing(2)
 	}
 }));
+
+// eslint-disable-next-line
+String.prototype.replaceMany = function (obj) {
+	let retStr = this;
+	for (let x in obj) {
+		retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+	}
+	return retStr;
+};
 
 export default function ModalContents(props) {
 	const styles = useStyles(props);
@@ -42,11 +54,11 @@ export default function ModalContents(props) {
 	const [open, setOpen] = useState([2]);
 
 	function toggleExpandSection(section) {
-		if (open.includes(section)) {
-			setOpen((prev) => prev.filter((sects) => sects !== section));
-		} else {
-			setOpen((prev) => [...prev, section]);
-		}
+		setOpen((prev) =>
+			prev.includes(section)
+				? prev.filter((alreadyOpen) => alreadyOpen !== section)
+				: [...prev, section]
+		);
 	}
 
 	function handleCloseModal() {
@@ -71,9 +83,10 @@ export default function ModalContents(props) {
 			<List component="section">
 				<ListItem button onClick={() => toggleExpandSection(1)} component="header">
 					<ListItemText
-						primary="Preliminary Work"
-						secondary="secondary..."
-						primaryTypographyProps={{ component: 'h2' }}
+						primary="Preparatory Instructions"
+						secondary="Applicable to all meditation subjects"
+						primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
+						secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
 					/>
 					{open.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>
@@ -85,17 +98,50 @@ export default function ModalContents(props) {
 				<Divider />
 				<ListItem button onClick={() => toggleExpandSection(2)}>
 					<ListItemText
-						primary="Specific instructions for this one"
-						secondary="subtitle"
+						primary={`Instructions for ${state?.subject?.longName}`}
+						secondary="Specific to this meditation subject only"
+						primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
+						secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
 					/>
 					{open.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>
-				<Collapse in={open.includes(2)} timeout="auto">
-					<Box>collapse!!2</Box>
+				<Collapse
+					in={open.includes(2)}
+					timeout="auto"
+					classes={{ wrapperInner: styles.collapse }}
+				>
+					{state?.subject?.instructions?.map((paragraph) =>
+						Object.values(paragraph)[0].map((text, index) =>
+							Object.keys(paragraph).includes('footNotes') ? (
+								<Typography key={Object.keys(text)[index]} paragraph>
+									{Object.keys(paragraph.footNotes).map((note) =>
+										console.log('note', note)
+									)}
+									{text.toString().replaceMany(paragraph.footNotes)}
+									{/* {text
+										.toString()
+										.replace(
+											new RegExp(Object.keys(paragraph.footNotes).join('|'), 'g'),
+											'HOW TO MAKE THIS AN ELEMENT?'
+										)} */}
+									{console.log(paragraph.footNotes)}
+								</Typography>
+							) : (
+								<Typography key={Object.keys(text)[index]} paragraph>
+									{text.toString()}
+								</Typography>
+							)
+						)
+					)}
 				</Collapse>
 				<Divider />
 				<ListItem button onClick={() => toggleExpandSection(3)}>
-					<ListItemText primary="General Jhana Info" secondary="secondary..." />
+					<ListItemText
+						primary="Supplementary Instructions"
+						secondary="Applicable to all meditation subjects"
+						primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
+						secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
+					/>
 					{open.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>
 				<Collapse in={open.includes(3)} timeout="auto">
