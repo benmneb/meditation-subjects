@@ -20,7 +20,7 @@ import { useGlobalState } from '../state';
 const useStyles = makeStyles((theme) => ({
 	appBar: {
 		position: 'relative',
-		height: 100,
+		height: 120,
 		backgroundColor: (props) => props?.data?.color
 	},
 	toolbar: {
@@ -57,10 +57,10 @@ export default function ModalContents(props) {
 		<>
 			<AppBar className={styles.appBar}>
 				<Toolbar disableGutters className={styles.toolbar}>
-					<Typography variant="h6" className={styles.title}>
+					<Typography variant="h4" component="h1" className={styles.title}>
 						{state?.subject?.longName}
 						<Box component="span" fontStyle="italic">
-							<Typography variant="body1">in {state?.subject?.chapter}</Typography>
+							<Typography variant="body1">in {state?.subject?.classification}</Typography>
 						</Box>
 					</Typography>
 					<IconButton edge="end" color="inherit" autoFocus onClick={handleCloseModal}>
@@ -68,13 +68,19 @@ export default function ModalContents(props) {
 					</IconButton>
 				</Toolbar>
 			</AppBar>
-			<List>
-				<ListItem button onClick={() => toggleExpandSection(1)}>
-					<ListItemText primary="Preliminary Work" secondary="secondary..." />
+			<List component="section">
+				<ListItem button onClick={() => toggleExpandSection(1)} component="header">
+					<ListItemText
+						primary="Preliminary Work"
+						secondary="secondary..."
+						primaryTypographyProps={{ component: 'h2' }}
+					/>
 					{open.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 				</ListItem>
 				<Collapse in={open.includes(1)} timeout="auto">
-					<Box>collapse!!1</Box>
+					<Box component="article" marginX={2}>
+						collapse!!1
+					</Box>
 				</Collapse>
 				<Divider />
 				<ListItem button onClick={() => toggleExpandSection(2)}>
