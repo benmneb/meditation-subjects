@@ -75,7 +75,7 @@ export default function ModalContents(props) {
 							<Typography variant="body1">in {state?.subject?.classification}</Typography>
 						</Box>
 					</Typography>
-					<IconButton edge="end" color="inherit" autoFocus onClick={handleCloseModal}>
+					<IconButton color="inherit" autoFocus onClick={handleCloseModal}>
 						<CloseRounded />
 					</IconButton>
 				</Toolbar>
