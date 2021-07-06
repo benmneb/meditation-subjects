@@ -44,9 +44,9 @@ export default function AboutDrawer() {
 					</Typography>
 				</Box>
 				<Typography paragraph>
-					This site is my attempt to simplify and make more accessible the meditation
-					instructions in the Visuddhimagga, while helping me study the commentaries to
-					the suttas of the Pali Canon.
+					This site is my attempt to make more accessible the meditation instructions in
+					the Visuddhimagga, while helping me study the commentaries to the suttas of the
+					Pali Canon and practice web development.
 				</Typography>
 				<Typography paragraph>
 					Any corrections or additions please{' '}
