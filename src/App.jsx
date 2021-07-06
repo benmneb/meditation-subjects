@@ -3,7 +3,15 @@ import { ThemeProvider } from '@material-ui/core/styles';
 
 import { StateProvider } from './state';
 import { useTheme } from './assets';
-import { Hero, TopBar, AboutDrawer, List, Footer, SubjectDrawer } from './components';
+import {
+	Hero,
+	TopBar,
+	AboutDrawer,
+	List,
+	Footer,
+	SubjectDrawer,
+	FootnoteDialog
+} from './components';
 import heroImg from './assets/hero.jpg';
 
 export default function App() {
@@ -19,6 +27,7 @@ export default function App() {
 				<List />
 				<Footer />
 				<SubjectDrawer />
+				<FootnoteDialog />
 			</ThemeProvider>
 		</StateProvider>
 	);

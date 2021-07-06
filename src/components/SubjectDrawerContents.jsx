@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
+
+import reactStringReplace from 'react-string-replace';
 
 import {
 	Box,
@@ -16,6 +18,7 @@ import { CloseRounded, ExpandLessRounded, ExpandMoreRounded } from '@material-ui
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from '../state';
+import { Footnote } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -116,17 +119,26 @@ export default function SubjectDrawerContents(props) {
 						Object.values(paragraph)[0].map((text, index) =>
 							Object.keys(paragraph).includes('footNotes') ? (
 								<Typography key={Object.keys(text)[index]} paragraph>
-									{Object.keys(paragraph.footNotes).map((note) =>
-										console.log('note', note)
+									{reactStringReplace(
+										text,
+										new RegExp(
+											`([${Object.keys(paragraph.footNotes).join('|')}]\\s)`,
+											'g'
+										),
+										(match, i) => (
+											<Fragment key={i}>
+												<Footnote
+													data={{
+														number: match.trim(),
+														content: paragraph.footNotes[match.trim()]
+													}}
+												>
+													[{match.trim()}]
+												</Footnote>
+												{'\u00A0'}
+											</Fragment>
+										)
 									)}
-									{text.toString().replaceMany(paragraph.footNotes)}
-									{/* {text
-										.toString()
-										.replace(
-											new RegExp(Object.keys(paragraph.footNotes).join('|'), 'g'),
-											'HOW TO MAKE THIS AN ELEMENT?'
-										)} */}
-									{console.log(paragraph.footNotes)}
 								</Typography>
 							) : (
 								<Typography key={Object.keys(text)[index]} paragraph>

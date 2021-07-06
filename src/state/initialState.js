@@ -1,4 +1,6 @@
 export const initialState = {
 	showAboutDrawer: false,
-	subject: null
+	showFootnote: false,
+	subject: null,
+	footnote: null
 };

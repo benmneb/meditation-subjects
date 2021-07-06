@@ -6,3 +6,4 @@ export { default as MeditationCard } from './MeditationCard';
 export { default as Footer } from './Footer';
 export { default as SubjectDrawer } from './SubjectDrawer';
 export { default as SubjectDrawerContents } from './SubjectDrawerContents';
+export { default as FootnoteDialog } from './FootnoteDialog';
