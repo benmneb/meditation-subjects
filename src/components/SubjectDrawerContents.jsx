@@ -19,8 +19,9 @@ import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
-		position: 'relative',
 		height: 120,
+		top: 'auto',
+		borderRadius: theme.spacing(2, 2, 0, 0),
 		backgroundColor: (props) => props?.data?.color
 	},
 	toolbar: {
@@ -67,7 +68,7 @@ export default function SubjectDrawerContents(props) {
 
 	return (
 		<>
-			<AppBar className={styles.appBar}>
+			<AppBar position="fixed" className={styles.appBar}>
 				<Toolbar disableGutters className={styles.toolbar}>
 					<Typography variant="h4" component="h1" className={styles.title}>
 						{state?.subject?.longName}
@@ -80,6 +81,7 @@ export default function SubjectDrawerContents(props) {
 					</IconButton>
 				</Toolbar>
 			</AppBar>
+			<Box minHeight={120} />
 			<List component="section">
 				<ListItem button onClick={() => toggleExpandSection(1)} component="header">
 					<ListItemText
