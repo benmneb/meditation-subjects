@@ -1,7 +1,7 @@
 import { SwipeableDrawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { ModalContents } from './index';
+import { SubjectDrawerContents } from './index';
 import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function Modal() {
+export default function SubjectDrawer() {
 	const styles = useStyles();
 	const [state, dispatch] = useGlobalState();
 
@@ -31,7 +31,7 @@ export default function Modal() {
 			onClose={toggleDrawer}
 			onOpen={toggleDrawer}
 		>
-			<ModalContents data={state?.subject} />
+			<SubjectDrawerContents data={state?.subject} />
 		</SwipeableDrawer>
 	);
 }

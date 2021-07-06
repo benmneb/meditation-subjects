@@ -4,5 +4,5 @@ export { default as AboutDrawer } from './AboutDrawer';
 export { default as List } from './List';
 export { default as MeditationCard } from './MeditationCard';
 export { default as Footer } from './Footer';
-export { default as Modal } from './Modal';
-export { default as ModalContents } from './ModalContents';
+export { default as SubjectDrawer } from './SubjectDrawer';
+export { default as SubjectDrawerContents } from './SubjectDrawerContents';

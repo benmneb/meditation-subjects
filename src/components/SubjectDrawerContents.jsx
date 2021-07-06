@@ -46,7 +46,7 @@ String.prototype.replaceMany = function (obj) {
 	return retStr;
 };
 
-export default function ModalContents(props) {
+export default function SubjectDrawerContents(props) {
 	const styles = useStyles(props);
 
 	const [state, dispatch] = useGlobalState();
@@ -61,7 +61,7 @@ export default function ModalContents(props) {
 		);
 	}
 
-	function handleCloseModal() {
+	function handleCloseDrawer() {
 		dispatch({ type: 'CHOOSE_SUBJECT', subject: null });
 	}
 
@@ -75,7 +75,7 @@ export default function ModalContents(props) {
 							<Typography variant="body1">in {state?.subject?.classification}</Typography>
 						</Box>
 					</Typography>
-					<IconButton color="inherit" autoFocus onClick={handleCloseModal}>
+					<IconButton color="inherit" autoFocus onClick={handleCloseDrawer}>
 						<CloseRounded />
 					</IconButton>
 				</Toolbar>
