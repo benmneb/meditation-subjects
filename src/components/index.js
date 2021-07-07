@@ -2,6 +2,7 @@ export { default as Hero } from './Hero nimitta';
 export { default as TopBar } from './TopBar';
 export { default as Filters } from './Filters';
 export { default as FiltersDrawer } from './FiltersDrawer';
+export { default as FiltersSelect } from './FiltersSelect';
 export { default as AboutDrawer } from './AboutDrawer';
 export { default as List } from './List';
 export { default as MeditationCard } from './MeditationCard';
