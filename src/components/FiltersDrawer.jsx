@@ -8,11 +8,6 @@ const useStyles = makeStyles({
 	drawerPaper: {
 		width: 290,
 		maxWidth: '80vw'
-	},
-	figCaption: {
-		display: 'flex',
-		alignItems: 'baseline',
-		justifyContent: 'flex-end'
 	}
 });
 
