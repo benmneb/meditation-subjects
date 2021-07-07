@@ -13,6 +13,7 @@ export const initialState = {
 			'Immaterial States',
 			'Other'
 		],
+		possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
 		maxAbsorption: [
 			'Access Concentration',
 			'First Jhana',
@@ -20,7 +21,6 @@ export const initialState = {
 			'Third Jhana',
 			'Fourth Jhana'
 		],
-		possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
 		temperaments: [
 			'Greedy',
 			'Hating',
