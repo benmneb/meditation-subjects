@@ -23,7 +23,7 @@ export default function AboutDrawer() {
 	function toggleAboutDrawer() {
 		dispatch({
 			type: 'TOGGLE_ABOUT_DRAWER',
-			showAboutDrawer: !state.showAboutDrawer
+			show: !state.showAboutDrawer
 		});
 	}
 

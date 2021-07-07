@@ -23,6 +23,17 @@ export function useTheme() {
 					},
 					shape: {
 						borderRadius: 16
+					},
+					mixins: {
+						appbar: {
+							height: 56,
+							'@media (min-width:0px) and (orientation: landscape)': {
+								height: 48
+							},
+							'@media (min-width:600px)': {
+								height: 64
+							}
+						}
 					}
 				})
 			),

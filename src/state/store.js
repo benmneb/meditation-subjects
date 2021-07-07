@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer } from 'react';
 
-import { reducer } from './reducer';
-import { initialState } from './initialState';
+import { reducer, initialState } from './index';
 
 const GlobalState = createContext(initialState);
 

@@ -7,6 +7,7 @@ import {
 	Hero,
 	TopBar,
 	AboutDrawer,
+	FiltersDrawer,
 	List,
 	Footer,
 	SubjectDrawer,
@@ -24,6 +25,7 @@ export default function App() {
 				<Hero imageSrc={heroImg} />
 				<TopBar />
 				<AboutDrawer />
+				<FiltersDrawer />
 				<List />
 				<Footer />
 				<SubjectDrawer />
