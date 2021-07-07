@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
-// import randomMC from 'random-material-color';
-
 import { MeditationCard } from './index';
 import { subjects } from '../data';
 
