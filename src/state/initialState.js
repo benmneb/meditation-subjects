@@ -4,6 +4,7 @@ export const initialState = {
 	showFootnote: false,
 	subject: null,
 	footnote: null,
+	totalVisibleSubjects: 40,
 	filters: {
 		classifications: [
 			'Kasina',
@@ -11,7 +12,7 @@ export const initialState = {
 			'Recollections',
 			'Divine Abidings',
 			'Immaterial States',
-			'Other'
+			'Other',
 		],
 		possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
 		maxAbsorption: [
@@ -19,7 +20,7 @@ export const initialState = {
 			'First Jhana',
 			'Second Jhana',
 			'Third Jhana',
-			'Fourth Jhana'
+			'Fourth Jhana',
 		],
 		temperaments: [
 			'Greedy',
@@ -27,13 +28,13 @@ export const initialState = {
 			'Deluded',
 			'Speculative',
 			'Faithful',
-			'Intelligent'
-		]
+			'Intelligent',
+		],
 	},
 	activeFilters: {
 		classifications: [],
 		possibleFor: '',
 		maxAbsorption: '',
-		temperaments: []
-	}
+		temperaments: [],
+	},
 };

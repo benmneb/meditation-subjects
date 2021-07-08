@@ -6,7 +6,7 @@ import {
 	Toolbar,
 	Tooltip,
 	Typography,
-	useMediaQuery
+	useMediaQuery,
 } from '@material-ui/core';
 import { InfoOutlined, FilterListRounded, CloseRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,20 +19,20 @@ const useStyles = makeStyles((theme) => ({
 		top: 0,
 		marginBottom: theme.spacing(1),
 		transition: `height ${theme.transitions.duration.enteringScreen}ms ${theme.transitions.easing.easeInOut}`,
-		...theme.mixins.appbar
+		...theme.mixins.appbar,
 	},
 	appBarWithFilters: {
-		height: 128
+		height: 128,
 	},
 	title: {
 		flexGrow: 1,
-		textAlign: 'center'
+		textAlign: 'center',
 	},
 	filters: {
 		display: 'flex',
 		justifyContent: 'center',
-		top: theme.spacing(-1)
-	}
+		top: theme.spacing(-1),
+	},
 }));
 
 export default function TopBar() {
@@ -43,13 +43,13 @@ export default function TopBar() {
 	function showAboutDrawer() {
 		dispatch({
 			type: 'TOGGLE_ABOUT_DRAWER',
-			show: !state.showAboutDrawer
+			show: !state.showAboutDrawer,
 		});
 	}
 	function toggleFilters() {
 		dispatch({
 			type: 'TOGGLE_FILTERS',
-			show: !state.showFilters
+			show: !state.showFilters,
 		});
 	}
 
@@ -58,7 +58,7 @@ export default function TopBar() {
 			position="sticky"
 			color="inherit"
 			className={clsx(styles.appBar, {
-				[styles.appBarWithFilters]: !smDown && state.showFilters
+				[styles.appBarWithFilters]: !smDown && state.showFilters,
 			})}
 		>
 			<Toolbar>
@@ -73,7 +73,7 @@ export default function TopBar() {
 					</IconButton>
 				</Tooltip>
 				<Typography variant="h6" component="h1" className={styles.title}>
-					Showing 40 of 40
+					Showing {state.totalVisibleSubjects} of 40
 				</Typography>
 				<Tooltip
 					title={!smDown && state.showFilters ? 'Hide filters' : 'Show filters'}

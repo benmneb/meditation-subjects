@@ -17,13 +17,18 @@ export function reducer(state, action) {
 				...state,
 				activeFilters: {
 					...state.activeFilters,
-					[action.data.source]: action.data.filter
-				}
+					[action.data.source]: action.data.filter,
+				},
 			};
 		case 'RESET_FILTERS':
 			return {
 				...state,
-				activeFilters: initialState.activeFilters
+				activeFilters: initialState.activeFilters,
+			};
+		case 'SET_TOTAL_VISIBLE_SUBJECTS':
+			return {
+				...state,
+				totalVisibleSubjects: action.number,
 			};
 		default:
 			return state;

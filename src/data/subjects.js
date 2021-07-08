@@ -8,7 +8,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 4,
-			title: 'The Earth Kasina'
+			title: 'The Earth Kasina',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -20,10 +20,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.brown[800]
+		color: colors.brown[800],
 	},
 	{
 		id: 2,
@@ -32,7 +32,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -44,10 +44,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.cyan[500]
+		color: colors.cyan[500],
 	},
 	{
 		id: 3,
@@ -56,7 +56,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -68,10 +68,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.red[800]
+		color: colors.red[800],
 	},
 	{
 		id: 4,
@@ -80,7 +80,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -92,10 +92,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.grey[300]
+		color: colors.grey[300],
 	},
 	{
 		id: 5,
@@ -104,15 +104,15 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Hating', 'Deluded', 'Speculative']
+			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
-		color: colors.blue[800]
+		color: colors.blue[800],
 	},
 	{
 		id: 6,
@@ -121,15 +121,15 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Hating', 'Deluded', 'Speculative']
+			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
-		color: colors.yellow[800]
+		color: colors.yellow[800],
 	},
 	{
 		id: 7,
@@ -138,15 +138,15 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Hating', 'Deluded', 'Speculative']
+			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
-		color: colors.red[500]
+		color: colors.red[500],
 	},
 	{
 		id: 8,
@@ -155,15 +155,15 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Hating', 'Deluded', 'Speculative']
+			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
-		color: colors.grey[50]
+		color: colors.grey[50],
 	},
 	{
 		id: 9,
@@ -172,7 +172,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -184,10 +184,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.amber[50]
+		color: colors.amber[50],
 	},
 	{
 		id: 10,
@@ -196,7 +196,7 @@ export const subjects = [
 		classification: 'Kasina Meditations',
 		chapter: {
 			number: 5,
-			title: 'The Remaining Kasinas'
+			title: 'The Remaining Kasinas',
 		},
 		filtersData: {
 			classification: 'Kasina',
@@ -208,10 +208,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.blueGrey[900]
+		color: colors.blueGrey[900],
 	},
 	{
 		id: 11,
@@ -220,15 +220,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.brown[900]
+		color: colors.brown[900],
 	},
 	{
 		id: 12,
@@ -237,15 +237,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.lightGreen[800]
+		color: colors.lightGreen[800],
 	},
 	{
 		id: 13,
@@ -254,15 +254,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.lime[800]
+		color: colors.lime[800],
 	},
 	{
 		id: 14,
@@ -271,15 +271,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.grey[400]
+		color: colors.grey[400],
 	},
 	{
 		id: 15,
@@ -288,15 +288,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.teal.A700
+		color: colors.teal.A700,
 	},
 	{
 		id: 16,
@@ -305,15 +305,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.amber[700]
+		color: colors.amber[700],
 	},
 	{
 		id: 17,
@@ -322,15 +322,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.deepOrange[500]
+		color: colors.deepOrange[500],
 	},
 	{
 		id: 18,
@@ -339,15 +339,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.red[700]
+		color: colors.red[700],
 	},
 	{
 		id: 19,
@@ -356,15 +356,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.brown[800]
+		color: colors.brown[800],
 	},
 	{
 		id: 20,
@@ -373,15 +373,15 @@ export const subjects = [
 		classification: 'Foulness Meditations',
 		chapter: {
 			number: 6,
-			title: 'Foulness as a Meditation Subject'
+			title: 'Foulness as a Meditation Subject',
 		},
 		filtersData: {
 			classification: 'Foulness',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.grey[200]
+		color: colors.grey[200],
 	},
 	{
 		id: 21,
@@ -390,15 +390,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.orange[700]
+		color: colors.orange[700],
 	},
 	{
 		id: 22,
@@ -407,15 +407,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.amber[700]
+		color: colors.amber[700],
 	},
 	{
 		id: 23,
@@ -424,15 +424,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.yellow[700]
+		color: colors.yellow[700],
 	},
 	{
 		id: 24,
@@ -441,15 +441,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.deepPurple[400]
+		color: colors.deepPurple[400],
 	},
 	{
 		id: 25,
@@ -458,15 +458,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.purple[400]
+		color: colors.purple[400],
 	},
 	{
 		id: 26,
@@ -475,15 +475,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 7,
-			title: 'Six Recollections'
+			title: 'Six Recollections',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Faithful']
+			temperaments: ['Faithful'],
 		},
-		color: colors.pink[400]
+		color: colors.pink[400],
 	},
 	{
 		id: 27,
@@ -492,15 +492,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 8,
-			title: 'Other Recollections as Meditation Subjects'
+			title: 'Other Recollections as Meditation Subjects',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Intelligent']
+			temperaments: ['Intelligent'],
 		},
-		color: colors.grey[900]
+		color: colors.grey[900],
 	},
 	{
 		id: 28,
@@ -509,15 +509,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 8,
-			title: 'Other Recollections as Meditation Subjects'
+			title: 'Other Recollections as Meditation Subjects',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'First Jhana',
-			temperaments: ['Greedy']
+			temperaments: ['Greedy'],
 		},
-		color: colors.green[900]
+		color: colors.green[900],
 	},
 	{
 		id: 29,
@@ -526,15 +526,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 8,
-			title: 'Other Recollections as Meditation Subjects'
+			title: 'Other Recollections as Meditation Subjects',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Deluded', 'Speculative']
+			temperaments: ['Deluded', 'Speculative'],
 		},
-		color: colors.blue.A100
+		color: colors.blue.A100,
 	},
 	{
 		id: 30,
@@ -543,15 +543,15 @@ export const subjects = [
 		classification: 'Recollections',
 		chapter: {
 			number: 8,
-			title: 'Other Recollections as Meditation Subjects'
+			title: 'Other Recollections as Meditation Subjects',
 		},
 		filtersData: {
 			classification: 'Recollections',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Intelligent']
+			temperaments: ['Intelligent'],
 		},
-		color: colors.lightBlue.A400
+		color: colors.lightBlue.A400,
 	},
 	{
 		id: 31,
@@ -560,15 +560,15 @@ export const subjects = [
 		classification: 'Divine Abidings',
 		chapter: {
 			number: 9,
-			title: 'The Divine Abidings'
+			title: 'The Divine Abidings',
 		},
 		filtersData: {
 			classification: 'Divine Abidings',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Third Jhana',
-			temperaments: ['Hating']
+			temperaments: ['Hating'],
 		},
-		color: colors.purple[500]
+		color: colors.purple[500],
 	},
 	{
 		id: 32,
@@ -577,15 +577,15 @@ export const subjects = [
 		classification: 'Divine Abidings',
 		chapter: {
 			number: 9,
-			title: 'The Divine Abidings'
+			title: 'The Divine Abidings',
 		},
 		filtersData: {
 			classification: 'Divine Abidings',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Third Jhana',
-			temperaments: ['Hating']
+			temperaments: ['Hating'],
 		},
-		color: colors.deepPurple[500]
+		color: colors.deepPurple[500],
 	},
 	{
 		id: 33,
@@ -594,15 +594,15 @@ export const subjects = [
 		classification: 'Divine Abidings',
 		chapter: {
 			number: 9,
-			title: 'The Divine Abidings'
+			title: 'The Divine Abidings',
 		},
 		filtersData: {
 			classification: 'Divine Abidings',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Third Jhana',
-			temperaments: ['Hating']
+			temperaments: ['Hating'],
 		},
-		color: colors.indigo[500]
+		color: colors.indigo[500],
 	},
 	{
 		id: 34,
@@ -611,15 +611,15 @@ export const subjects = [
 		classification: 'Divine Abidings',
 		chapter: {
 			number: 9,
-			title: 'The Divine Abidings'
+			title: 'The Divine Abidings',
 		},
 		filtersData: {
 			classification: 'Divine Abidings',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
-			temperaments: ['Hating']
+			temperaments: ['Hating'],
 		},
-		color: colors.blue[500]
+		color: colors.blue[500],
 	},
 	{
 		id: 35,
@@ -628,7 +628,7 @@ export const subjects = [
 		classification: 'Immaterial States',
 		chapter: {
 			number: 10,
-			title: 'The Immaterial States'
+			title: 'The Immaterial States',
 		},
 		filtersData: {
 			classification: 'Immaterial States',
@@ -640,10 +640,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.blueGrey[300]
+		color: colors.blueGrey[300],
 	},
 	{
 		id: 36,
@@ -652,7 +652,7 @@ export const subjects = [
 		classification: 'Immaterial States',
 		chapter: {
 			number: 10,
-			title: 'The Immaterial States'
+			title: 'The Immaterial States',
 		},
 		filtersData: {
 			classification: 'Immaterial States',
@@ -664,10 +664,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.blueGrey[200]
+		color: colors.blueGrey[200],
 	},
 	{
 		id: 37,
@@ -676,7 +676,7 @@ export const subjects = [
 		classification: 'Immaterial States',
 		chapter: {
 			number: 10,
-			title: 'The Immaterial States'
+			title: 'The Immaterial States',
 		},
 		filtersData: {
 			classification: 'Immaterial States',
@@ -688,10 +688,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.blueGrey[100]
+		color: colors.blueGrey[100],
 	},
 	{
 		id: 38,
@@ -700,7 +700,7 @@ export const subjects = [
 		classification: 'Immaterial States',
 		chapter: {
 			number: 10,
-			title: 'The Immaterial States'
+			title: 'The Immaterial States',
 		},
 		filtersData: {
 			classification: 'Immaterial States',
@@ -712,10 +712,10 @@ export const subjects = [
 				'Deluded',
 				'Speculative',
 				'Faithful',
-				'Intelligent'
-			]
+				'Intelligent',
+			],
 		},
-		color: colors.blueGrey[50]
+		color: colors.blueGrey[50],
 	},
 	{
 		id: 39,
@@ -724,15 +724,15 @@ export const subjects = [
 		classification: 'Other Meditations',
 		chapter: {
 			number: 11,
-			title: 'Concentration - Conclusion'
+			title: 'Concentration - Conclusion',
 		},
 		filtersData: {
-			classification: 'Other Meditations',
+			classification: 'Other',
 			possibleFor: ['Humans'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Intelligent']
+			temperaments: ['Intelligent'],
 		},
-		color: colors.green[800]
+		color: colors.green[800],
 	},
 	{
 		id: 40,
@@ -741,14 +741,14 @@ export const subjects = [
 		classification: 'Other Meditations',
 		chapter: {
 			number: 11,
-			title: 'Concentration - Conclusion'
+			title: 'Concentration - Conclusion',
 		},
 		filtersData: {
-			classification: 'Other Meditations',
+			classification: 'Other',
 			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Access Concentration',
-			temperaments: ['Intelligent']
+			temperaments: ['Intelligent'],
 		},
-		color: colors.orange[800]
-	}
+		color: colors.orange[800],
+	},
 ];
