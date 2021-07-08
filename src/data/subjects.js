@@ -12,7 +12,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
@@ -36,7 +36,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
@@ -60,7 +60,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
@@ -84,7 +84,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
@@ -108,7 +108,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: ['Hating', 'Deluded', 'Speculative']
 		},
@@ -125,7 +125,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: ['Hating', 'Deluded', 'Speculative']
 		},
@@ -142,7 +142,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: ['Hating', 'Deluded', 'Speculative']
 		},
@@ -159,7 +159,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: ['Hating', 'Deluded', 'Speculative']
 		},
@@ -176,7 +176,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
@@ -200,7 +200,7 @@ export const subjects = [
 		},
 		filtersData: {
 			classification: 'Kasina',
-			possibleFor: ['Humans', 'Devas', 'Brahmas', 'Immaterial Beings'],
+			possibleFor: ['Humans', 'Devas', 'Brahmas'],
 			maxAbsorption: 'Fourth Jhana',
 			temperaments: [
 				'Greedy',
