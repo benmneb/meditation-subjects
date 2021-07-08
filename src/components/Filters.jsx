@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		justifyContent: 'space-evenly',
 		height: (props) => (props.smDown ? '100%' : 'auto'),
-		maxHeight: (props) => (props.smDown ? 500 : 'auto')
-	}
+		maxHeight: (props) => (props.smDown ? 500 : 'auto'),
+	},
 }));
 
 export default function Filters(props) {
@@ -23,6 +23,11 @@ export default function Filters(props) {
 	const theme = useTheme();
 	const [state, dispatch] = useGlobalState();
 
+	const noFiltersApplied =
+		Object.values(state.activeFilters)
+			.flat()
+			.filter((e) => String(e).trim()).length < 1;
+
 	function handleChange(event, source) {
 		const filter = Array.isArray(event.target.value)
 			? [...event.target.value]
@@ -30,7 +35,7 @@ export default function Filters(props) {
 
 		dispatch({
 			type: 'APPLY_FILTER',
-			data: { source, filter }
+			data: { source, filter },
 		});
 	}
 
@@ -45,7 +50,7 @@ export default function Filters(props) {
 				enter: smDown
 					? theme.transitions.duration.enteringScreen
 					: theme.transitions.duration.complex,
-				exit: theme.transitions.duration.leavingScreen
+				exit: theme.transitions.duration.leavingScreen,
 			}}
 		>
 			<Box className={styles.wrapper}>
@@ -58,7 +63,11 @@ export default function Filters(props) {
 						multiSelect={Boolean(i === 0 || i === 3)}
 					/>
 				))}
-				<Button startIcon={<RotateLeftRounded />} onClick={handleReset}>
+				<Button
+					startIcon={<RotateLeftRounded />}
+					disabled={noFiltersApplied}
+					onClick={handleReset}
+				>
 					Reset
 				</Button>
 			</Box>
