@@ -1,4 +1,5 @@
 import * as colors from '@material-ui/core/colors';
+import * as instructions from './instructions';
 
 export const subjects = [
 	{
@@ -24,6 +25,7 @@ export const subjects = [
 			],
 		},
 		color: colors.brown[800],
+		instructions: instructions.earthKasina,
 	},
 	{
 		id: 2,
@@ -48,6 +50,7 @@ export const subjects = [
 			],
 		},
 		color: colors.cyan[500],
+		instructions: instructions.waterKasina,
 	},
 	{
 		id: 3,
