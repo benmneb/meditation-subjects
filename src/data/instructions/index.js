@@ -1,2 +1,2 @@
-export { earthKasina } from './earthKasina';
-export { waterKasina } from './waterKasina';
+export * as kasina from './kasina';
+export * as prep from './preparatory';

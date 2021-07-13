@@ -25,7 +25,7 @@ export const subjects = [
 			],
 		},
 		color: colors.brown[800],
-		instructions: instructions.earthKasina,
+		instructions: instructions.kasina.earth,
 	},
 	{
 		id: 2,
@@ -50,7 +50,7 @@ export const subjects = [
 			],
 		},
 		color: colors.cyan[500],
-		instructions: instructions.waterKasina,
+		instructions: instructions.kasina.water,
 	},
 	{
 		id: 3,
@@ -75,6 +75,7 @@ export const subjects = [
 			],
 		},
 		color: colors.red[800],
+		instructions: instructions.kasina.fire,
 	},
 	{
 		id: 4,
@@ -99,6 +100,7 @@ export const subjects = [
 			],
 		},
 		color: colors.grey[300],
+		instructions: instructions.kasina.air,
 	},
 	{
 		id: 5,
@@ -116,6 +118,7 @@ export const subjects = [
 			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
 		color: colors.blue[800],
+		instructions: instructions.kasina.blue,
 	},
 	{
 		id: 6,
@@ -133,6 +136,7 @@ export const subjects = [
 			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
 		color: colors.yellow[800],
+		instructions: instructions.kasina.yellow,
 	},
 	{
 		id: 7,
@@ -150,6 +154,7 @@ export const subjects = [
 			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
 		color: colors.red[500],
+		instructions: instructions.kasina.red,
 	},
 	{
 		id: 8,
@@ -167,6 +172,7 @@ export const subjects = [
 			temperaments: ['Hating', 'Deluded', 'Speculative'],
 		},
 		color: colors.grey[50],
+		instructions: instructions.kasina.white,
 	},
 	{
 		id: 9,
@@ -191,6 +197,7 @@ export const subjects = [
 			],
 		},
 		color: colors.amber[50],
+		instructions: instructions.kasina.light,
 	},
 	{
 		id: 10,
@@ -215,6 +222,7 @@ export const subjects = [
 			],
 		},
 		color: colors.blueGrey[900],
+		instructions: instructions.kasina.limitedSpace,
 	},
 	{
 		id: 11,
