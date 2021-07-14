@@ -26,6 +26,13 @@ export function activeFootnote(data) {
 	};
 }
 
+export function showSubjectDrawer(show) {
+	return {
+		type: 'SHOW_SUBJECT_DRAWER',
+		show,
+	};
+}
+
 export function chooseSubject(subject) {
 	return {
 		type: 'CHOOSE_SUBJECT',

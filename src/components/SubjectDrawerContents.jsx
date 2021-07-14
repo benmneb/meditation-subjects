@@ -20,7 +20,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { FormattedText } from '../utils';
 import { preparatory } from '../data/';
-import { chooseSubject } from '../store';
+import { showSubjectDrawer } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -97,7 +97,7 @@ export default function SubjectDrawerContents(props) {
 	}
 
 	function handleCloseDrawer() {
-		dispatch(chooseSubject(null));
+		dispatch(showSubjectDrawer(false));
 	}
 
 	return (

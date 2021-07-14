@@ -10,7 +10,7 @@ import {
 
 import { useDispatch } from 'react-redux';
 
-import { chooseSubject } from '../store';
+import { chooseSubject, showSubjectDrawer } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
@@ -62,6 +62,7 @@ export default function MeditationCard({ data, ...props }) {
 	const dispatch = useDispatch();
 
 	function handleClick() {
+		dispatch(showSubjectDrawer(true));
 		dispatch(chooseSubject(data));
 	}
 

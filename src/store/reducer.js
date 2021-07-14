@@ -4,6 +4,7 @@ const initialState = {
 	showAboutDrawer: false,
 	showFilters: false,
 	showFootnote: false,
+	showSubjectDrawer: false,
 	subject: null,
 	footnote: null,
 	totalVisibleSubjects: 40,
@@ -47,6 +48,8 @@ export function reducer(state = initialState, action) {
 			return { ...state, showAboutDrawer: action.show };
 		case 'TOGGLE_FILTERS':
 			return { ...state, showFilters: action.show };
+		case 'SHOW_SUBJECT_DRAWER':
+			return { ...state, showSubjectDrawer: action.show };
 		case 'CHOOSE_SUBJECT':
 			return { ...state, subject: action.subject };
 		case 'SHOW_FOOTNOTE':
