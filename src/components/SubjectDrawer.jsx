@@ -1,8 +1,10 @@
 import { SwipeableDrawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useSelector, useDispatch } from 'react-redux';
+
 import { SubjectDrawerContents } from './index';
-import { useGlobalState } from '../state';
+import { chooseSubject } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -13,11 +15,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SubjectDrawer() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const subject = useSelector((state) => state.subject);
 
 	function toggleDrawer() {
-		if (state.subject) {
-			dispatch({ type: 'CHOOSE_SUBJECT', subject: null });
+		if (subject) {
+			dispatch(chooseSubject(null));
 		}
 	}
 
@@ -27,11 +31,11 @@ export default function SubjectDrawer() {
 			classes={{ paper: styles.paper }}
 			disableDiscovery
 			disableSwipeToOpen
-			open={Boolean(state.subject)}
+			open={Boolean(subject)}
 			onClose={toggleDrawer}
 			onOpen={toggleDrawer}
 		>
-			<SubjectDrawerContents color={state?.subject?.color} />
+			<SubjectDrawerContents color={subject?.color} />
 		</SwipeableDrawer>
 	);
 }

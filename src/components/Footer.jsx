@@ -3,8 +3,10 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Tooltip, Typography } from '@material-ui/core';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { Link } from '../utils';
+import { resetFilters } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
@@ -43,7 +45,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const totalVisibleSubjects = useSelector((state) => state.totalVisibleSubjects);
 
 	function handleSuttaClick() {
 		return window.open(
@@ -53,15 +57,15 @@ export default function Footer() {
 		);
 	}
 
-	function resetFilters() {
-		dispatch({ type: 'RESET_FILTERS' });
+	function handleResetFilters() {
+		dispatch(resetFilters());
 	}
 
 	return (
 		<Box component="footer" className={styles.footer}>
 			<Box
 				className={clsx(styles.noResults, {
-					[styles.displayNone]: state.totalVisibleSubjects > 0,
+					[styles.displayNone]: totalVisibleSubjects > 0,
 				})}
 			>
 				<Typography variant="h6" paragraph>
@@ -69,7 +73,7 @@ export default function Footer() {
 				</Typography>
 				<Typography paragraph>
 					You can <b>1)</b>{' '}
-					<Link noHref onClick={resetFilters}>
+					<Link noHref onClick={handleResetFilters}>
 						reset all filters
 					</Link>
 					, <b>2)</b> choose different filters, or <b>3)</b> sit down comfortably in a
@@ -85,7 +89,7 @@ export default function Footer() {
 				<Box
 					component="figure"
 					className={clsx(styles.figure, {
-						[styles.displayNone]: state.totalVisibleSubjects === 0,
+						[styles.displayNone]: totalVisibleSubjects === 0,
 					})}
 					onClick={handleSuttaClick}
 				>

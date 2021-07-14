@@ -11,8 +11,10 @@ import {
 import { InfoOutlined, FilterListRounded, CloseRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { Filters } from './index';
+import { toggleAboutDrawer, toggleFilters } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -37,20 +39,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TopBar() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
+	const showFilters = useSelector((state) => state.showFilters);
+	const totalVisibleSubjects = useSelector((state) => state.totalVisibleSubjects);
 	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
-	function showAboutDrawer() {
-		dispatch({
-			type: 'TOGGLE_ABOUT_DRAWER',
-			show: !state.showAboutDrawer,
-		});
+	function handleShowAboutDrawer() {
+		dispatch(toggleAboutDrawer(!showAboutDrawer));
 	}
-	function toggleFilters() {
-		dispatch({
-			type: 'TOGGLE_FILTERS',
-			show: !state.showFilters,
-		});
+	function handleToggleFilters() {
+		dispatch(toggleFilters(!showFilters));
 	}
 
 	return (
@@ -58,7 +58,7 @@ export default function TopBar() {
 			position="sticky"
 			color="inherit"
 			className={clsx(styles.appBar, {
-				[styles.appBarWithFilters]: !smDown && state.showFilters,
+				[styles.appBarWithFilters]: !smDown && showFilters,
 			})}
 		>
 			<Toolbar>
@@ -67,25 +67,25 @@ export default function TopBar() {
 						edge="start"
 						color="inherit"
 						aria-label="about"
-						onClick={showAboutDrawer}
+						onClick={handleShowAboutDrawer}
 					>
 						<InfoOutlined />
 					</IconButton>
 				</Tooltip>
 				<Typography variant="h6" component="h1" className={styles.title}>
-					Showing {state.totalVisibleSubjects} of 40
+					Showing {totalVisibleSubjects} of 40
 				</Typography>
 				<Tooltip
-					title={!smDown && state.showFilters ? 'Hide filters' : 'Show filters'}
+					title={!smDown && showFilters ? 'Hide filters' : 'Show filters'}
 					placement="left"
 				>
 					<IconButton
 						edge="end"
 						color="inherit"
 						aria-label="filters"
-						onClick={toggleFilters}
+						onClick={handleToggleFilters}
 					>
-						{!smDown && state.showFilters ? <CloseRounded /> : <FilterListRounded />}
+						{!smDown && showFilters ? <CloseRounded /> : <FilterListRounded />}
 					</IconButton>
 				</Tooltip>
 			</Toolbar>

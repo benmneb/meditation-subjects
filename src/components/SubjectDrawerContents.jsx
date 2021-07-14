@@ -16,10 +16,11 @@ import {
 import { CloseRounded, ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
-import { FormattedText } from '../utils';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { FormattedText } from '../utils';
 import { preparatory } from '../data/';
+import { chooseSubject } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -72,8 +73,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SubjectDrawerContents(props) {
 	const styles = useStyles(props);
+	const dispatch = useDispatch();
 
-	const [state, dispatch] = useGlobalState();
+	const subject = useSelector((state) => state.subject);
 
 	const [open, setOpen] = useState([2]);
 	const [openSubChap, setOpenSubChap] = useState([]);
@@ -95,7 +97,7 @@ export default function SubjectDrawerContents(props) {
 	}
 
 	function handleCloseDrawer() {
-		dispatch({ type: 'CHOOSE_SUBJECT', subject: null });
+		dispatch(chooseSubject(null));
 	}
 
 	return (
@@ -103,9 +105,9 @@ export default function SubjectDrawerContents(props) {
 			<AppBar position="fixed" className={styles.appBar}>
 				<Toolbar disableGutters className={styles.toolbar}>
 					<Typography variant="h4" component="h1" className={styles.title}>
-						{state?.subject?.longName}
+						{subject?.longName}
 						<Box component="span" fontStyle="italic">
-							<Typography variant="body1">in {state?.subject?.classification}</Typography>
+							<Typography variant="body1">in {subject?.classification}</Typography>
 						</Box>
 					</Typography>
 					<Tooltip title="Close" placement="left">
@@ -184,7 +186,7 @@ export default function SubjectDrawerContents(props) {
 				>
 					<Box className={styles.listItemInner}>
 						<ListItemText
-							primary={`Instructions for ${state?.subject?.longName}`}
+							primary={`Instructions for ${subject?.longName}`}
 							secondary="Specific to this meditation subject only"
 							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
 							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
@@ -197,7 +199,7 @@ export default function SubjectDrawerContents(props) {
 					timeout="auto"
 					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>
-					{state.subject && <FormattedText data={state.subject.instructions} />}
+					{subject && <FormattedText data={subject.instructions} />}
 				</Collapse>
 				<Divider />
 				<ListItem

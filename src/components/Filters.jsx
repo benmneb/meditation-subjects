@@ -2,8 +2,10 @@ import { Box, Button, Fade, Typography } from '@material-ui/core';
 import { RotateLeftRounded } from '@material-ui/icons';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { FiltersSelect } from './index';
+import { applyFilter, resetFilters } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
@@ -19,12 +21,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Filters(props) {
 	const { smDown } = props;
+
 	const styles = useStyles(props);
 	const theme = useTheme();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const activeFilters = useSelector((state) => state.activeFilters);
+	const showFilters = useSelector((state) => state.showFilters);
+	const filters = useSelector((state) => state.filters);
 
 	const noFiltersApplied =
-		Object.values(state.activeFilters)
+		Object.values(activeFilters)
 			.flat()
 			.filter((e) => String(e).trim()).length < 1;
 
@@ -33,19 +40,16 @@ export default function Filters(props) {
 			? [...event.target.value]
 			: event.target.value;
 
-		dispatch({
-			type: 'APPLY_FILTER',
-			data: { source, filter },
-		});
+		dispatch(applyFilter(source, filter));
 	}
 
 	function handleReset() {
-		dispatch({ type: 'RESET_FILTERS' });
+		dispatch(resetFilters());
 	}
 
 	return (
 		<Fade
-			in={state.showFilters}
+			in={showFilters}
 			timeout={{
 				enter: smDown
 					? theme.transitions.duration.enteringScreen
@@ -55,7 +59,7 @@ export default function Filters(props) {
 		>
 			<Box className={styles.wrapper}>
 				<Typography variant={smDown ? 'h6' : 'button'}>Filter by:</Typography>
-				{Object.keys(state.filters).map((filter, i) => (
+				{Object.keys(filters).map((filter, i) => (
 					<FiltersSelect
 						key={filter}
 						filter={filter}

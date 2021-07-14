@@ -1,25 +1,26 @@
 import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 import { Link } from '../utils/';
+import { toggleAboutDrawer } from '../store';
 
 const useStyles = makeStyles({
 	drawerPaper: {
 		width: 290,
-		maxWidth: '80vw'
-	}
+		maxWidth: '80vw',
+	},
 });
 
 export default function AboutDrawer() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+	const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
 
-	function toggleAboutDrawer() {
-		dispatch({
-			type: 'TOGGLE_ABOUT_DRAWER',
-			show: !state.showAboutDrawer
-		});
+	function handleToggleAboutDrawer() {
+		dispatch(toggleAboutDrawer(!showAboutDrawer));
 	}
 
 	return (
@@ -28,9 +29,9 @@ export default function AboutDrawer() {
 			anchor="left"
 			disableDiscovery
 			disableSwipeToOpen
-			open={state.showAboutDrawer}
-			onClose={toggleAboutDrawer}
-			onOpen={toggleAboutDrawer}
+			open={showAboutDrawer}
+			onClose={handleToggleAboutDrawer}
+			onOpen={handleToggleAboutDrawer}
 		>
 			<Box component="section" margin={2}>
 				<Box component="header" fontWeight="fontWeightBold">

@@ -6,11 +6,14 @@ import {
 	DialogContent,
 	DialogContentText,
 	DialogTitle,
-	Paper
+	Paper,
 } from '@material-ui/core';
+
 import Draggable from 'react-draggable';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { showFootnote, activeFootnote } from '../store';
 
 function PaperComponent(props) {
 	return (
@@ -24,29 +27,32 @@ function PaperComponent(props) {
 }
 
 export default function FootnoteDialog() {
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const isFootnoteShown = useSelector((state) => state.showFootnote);
+	const footnote = useSelector((state) => state.footnote);
 
 	function handleClose() {
-		dispatch({ type: 'SHOW_FOOTNOTE', show: false });
+		dispatch(showFootnote(false));
 	}
 
 	function handleExited() {
-		dispatch({ type: 'ACTIVE_FOOTNOTE', footnote: null });
+		dispatch(activeFootnote(null));
 	}
 
 	return (
 		<Dialog
-			open={Boolean(state.showFootnote)}
+			open={isFootnoteShown}
 			aria-labelledby="footnote-dialog-title"
 			PaperComponent={PaperComponent}
 			onBackdropClick={handleClose}
 			onExited={handleExited}
 		>
 			<DialogTitle style={{ cursor: 'move' }} id="footnote-dialog-title">
-				Footnote #{state?.footnote?.number}
+				Footnote #{footnote?.number}
 			</DialogTitle>
 			<DialogContent>
-				<DialogContentText>{state?.footnote?.content}</DialogContentText>
+				<DialogContentText>{footnote?.content}</DialogContentText>
 			</DialogContent>
 			<DialogActions>
 				<Button onClick={handleClose} color="default">

@@ -5,13 +5,16 @@ import {
 	CardActions,
 	CardContent,
 	CardHeader,
-	Typography
+	Typography,
 } from '@material-ui/core';
-import { useGlobalDispatch } from '../state';
+
+import { useDispatch } from 'react-redux';
+
+import { chooseSubject } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
-		padding: 0
+		padding: 0,
 	},
 	card: {
 		width: '100%',
@@ -24,42 +27,42 @@ const useStyles = makeStyles((theme) => ({
 		color: (props) => theme.palette.getContrastText(props.bgColor),
 		backgroundColor: (props) => props.bgColor,
 		[theme.breakpoints.only('xs')]: {
-			height: 250
-		}
+			height: 250,
+		},
 	},
 	header: {
 		color: (props) => theme.palette.getContrastText(props.bgColor),
 		fontSize: 14,
-		opacity: '0.2'
+		opacity: '0.2',
 	},
 	content: {
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'space-evenly',
 		height: '100%',
-		maxHeight: 190
+		maxHeight: 190,
 	},
 	chapter: {
 		color: (props) => theme.palette.getContrastText(props.bgColor),
 		marginBottom: 12,
 		opacity: '0.7',
 		[theme.breakpoints.only('xs')]: {
-			display: 'none'
-		}
+			display: 'none',
+		},
 	},
 	actions: {
 		color: (props) => theme.palette.getContrastText(props.bgColor),
-		padding: theme.spacing(1, 1.5)
-	}
+		padding: theme.spacing(1, 1.5),
+	},
 }));
 
 export default function MeditationCard({ data, ...props }) {
 	const styles = useStyles(props);
 
-	const dispatch = useGlobalDispatch();
+	const dispatch = useDispatch();
 
 	function handleClick() {
-		dispatch({ type: 'CHOOSE_SUBJECT', subject: data });
+		dispatch(chooseSubject(data));
 	}
 
 	return (

@@ -4,11 +4,19 @@ import ReactDOM from 'react-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import { reducer } from './store';
 import App from './App';
+
+const store = createStore(reducer);
 
 ReactDOM.render(
 	<StrictMode>
-		<App />
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</StrictMode>,
 	document.getElementById('root')
 );

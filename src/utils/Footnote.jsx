@@ -1,5 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { useGlobalDispatch } from '../state';
+
+import { useDispatch } from 'react-redux';
+
+import { showFootnote, activeFootnote } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	footnote: {
@@ -16,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footnote({ children, data }) {
 	const styles = useStyles();
-	const dispatch = useGlobalDispatch();
+	const dispatch = useDispatch();
 
 	function handleClick() {
-		dispatch({ type: 'SHOW_FOOTNOTE', show: true });
-		dispatch({ type: 'ACTIVE_FOOTNOTE', data });
+		dispatch(showFootnote(true));
+		dispatch(activeFootnote(data));
 	}
 
 	return (

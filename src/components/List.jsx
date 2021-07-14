@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
+import { useSelector, useDispatch } from 'react-redux';
+
 import { subjects } from '../data';
-import { useGlobalState } from '../state';
 import { MeditationCard } from './index';
+import { setTotalVisibleSubjects } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -22,13 +24,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function List() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState();
+	const dispatch = useDispatch();
+
+	const activeFilters = useSelector((state) => state.activeFilters);
 
 	const [visibleSubjects, setVisibleSubjects] = useState(subjects);
 
 	// display relevent subjects based on applied filters
 	useEffect(() => {
-		const flatFilters = Object.values(state.activeFilters).flat();
+		const flatFilters = Object.values(activeFilters).flat();
 		const cleanFlatFilters = flatFilters.filter((e) => String(e).trim());
 
 		if (cleanFlatFilters.length > 0) {
@@ -39,12 +43,12 @@ export default function List() {
 					)
 				)
 			);
-			dispatch({ type: 'SET_TOTAL_VISIBLE_SUBJECTS', number: visibleSubjects.length });
+			dispatch(setTotalVisibleSubjects(visibleSubjects.length));
 		} else {
 			setVisibleSubjects(subjects);
-			dispatch({ type: 'SET_TOTAL_VISIBLE_SUBJECTS', number: 40 });
+			dispatch(setTotalVisibleSubjects(40));
 		}
-	}, [state.activeFilters, dispatch, visibleSubjects.length]);
+	}, [activeFilters, dispatch, visibleSubjects.length]);
 
 	return (
 		<Box className={styles.root}>
