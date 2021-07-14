@@ -13,28 +13,31 @@ export function useTheme() {
 					palette: {
 						type: prefersDarkMode ? 'dark' : 'light',
 						primary: { main: '#FF9933' },
-						secondary: { main: '#3399FF' }
+						secondary: { main: '#3399FF' },
 					},
 					typography: {
 						fontFamily: ['Inter', 'sans-serif'].join(','),
 						button: {
-							textTransform: 'none'
-						}
+							textTransform: 'none',
+						},
 					},
 					shape: {
-						borderRadius: 16
+						borderRadius: 16,
 					},
 					mixins: {
 						appbar: {
 							height: 56,
 							'@media (min-width:0px) and (orientation: landscape)': {
-								height: 48
+								height: 48,
 							},
 							'@media (min-width:600px)': {
-								height: 64
-							}
-						}
-					}
+								height: 64,
+							},
+						},
+						subjectDrawerContents: {
+							maxWidth: 600,
+						},
+					},
 				})
 			),
 		[prefersDarkMode]

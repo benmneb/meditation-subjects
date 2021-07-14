@@ -7,8 +7,8 @@ import { useGlobalState } from '../state';
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		height: '97%',
-		borderRadius: theme.spacing(2, 2, 0, 0)
-	}
+		borderRadius: theme.spacing(2, 2, 0, 0),
+	},
 }));
 
 export default function SubjectDrawer() {
@@ -31,7 +31,7 @@ export default function SubjectDrawer() {
 			onClose={toggleDrawer}
 			onOpen={toggleDrawer}
 		>
-			<SubjectDrawerContents data={state?.subject} />
+			<SubjectDrawerContents color={state?.subject?.color} />
 		</SwipeableDrawer>
 	);
 }

@@ -1,7 +1,5 @@
 import { useState, Fragment } from 'react';
 
-import reactStringReplace from 'react-string-replace';
-
 import {
 	Box,
 	Collapse,
@@ -13,27 +11,27 @@ import {
 	Toolbar,
 	Typography,
 	IconButton,
+	Tooltip,
 } from '@material-ui/core';
 import { CloseRounded, ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from '../state';
-import { Footnote } from '../utils';
+import { FormattedText } from '../utils';
 
-import { inBrief } from '../data/instructions/preparatory/inBrief';
+import { preparatory } from '../data/';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
 		height: 120,
 		top: 'auto',
 		borderRadius: theme.spacing(2, 2, 0, 0),
-		backgroundColor: (props) => props?.data?.color,
+		backgroundColor: (props) => props?.color,
 	},
 	toolbar: {
 		height: '100%',
 		textAlign: 'center',
-		color: (props) =>
-			props?.data?.color && theme.palette.getContrastText(props?.data?.color),
+		color: (props) => props?.color && theme.palette.getContrastText(props?.color),
 	},
 	title: {
 		marginLeft: theme.spacing(2),
@@ -48,18 +46,19 @@ const useStyles = makeStyles((theme) => ({
 	listItemInner: {
 		display: 'flex',
 		alignItems: 'center',
-		width: theme.breakpoints.values.sm,
+		width: theme.mixins.subjectDrawerContents.maxWidth,
 	},
 	wrapper: {
 		display: 'flex',
 		justifyContent: 'center',
+		height: '100%',
 	},
 	wrapperInner: {
-		maxWidth: theme.breakpoints.values.sm,
+		maxWidth: theme.mixins.subjectDrawerContents.maxWidth,
 		padding: theme.spacing(1, 2),
 	},
 	buttonBaseRoot: {
-		borderRadius: theme.spacing(2),
+		borderRadius: theme.shape.borderRadius,
 	},
 	noBefore: {
 		'&::before': {
@@ -109,13 +108,19 @@ export default function SubjectDrawerContents(props) {
 							<Typography variant="body1">in {state?.subject?.classification}</Typography>
 						</Box>
 					</Typography>
-					<IconButton color="inherit" autoFocus onClick={handleCloseDrawer}>
-						<CloseRounded />
-					</IconButton>
+					<Tooltip title="Close" placement="left">
+						<IconButton color="inherit" autoFocus onClick={handleCloseDrawer}>
+							<CloseRounded />
+						</IconButton>
+					</Tooltip>
 				</Toolbar>
 			</AppBar>
 			<Box minHeight={120} />
 			<List component="section">
+				{/* <ListHeader number={i} primary={text.primary} secondary={text.secondary} />
+			<ListContent number={i}>
+				
+			</ListContent> */}
 				<ListItem
 					button
 					onClick={() => toggleExpandSection(1)}
@@ -138,74 +143,31 @@ export default function SubjectDrawerContents(props) {
 					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>
 					<Box component="article">
-						{inBrief.map((paragraph) =>
-							Object.values(paragraph)[0].map((text, index) =>
-								Object.keys(paragraph).includes('footNotes') ? (
-									<Typography key={Object.keys(text)[index]} paragraph>
-										{reactStringReplace(
-											text,
-											new RegExp(
-												`([${Object.keys(paragraph.footNotes).join('|')}]\\s)`,
-												'g'
-											),
-											(match, i) => (
-												<Fragment key={i}>
-													<Footnote
-														data={{
-															number: match.trim(),
-															content: paragraph.footNotes[match.trim()],
-														}}
-													>
-														[{match.trim()}]
-													</Footnote>
-													{'\u00A0'}
-												</Fragment>
-											)
-										)}
-									</Typography>
-								) : (
-									<Typography key={Object.keys(text)[index]} paragraph>
-										{text.toString()}
-									</Typography>
-								)
-							)
-						)}
+						<FormattedText data={preparatory.inBrief} />
 						<List>
-							{[
-								'Sever any of the Ten Impediments',
-								'Approach the Good Friend',
-								'Apprehend from among the 40 meditation subjects',
-								'One that suits his own temperament',
-								'Avoid a monastery unfavourable to the development of concentration',
-								'Go to live in one that is favourable',
-								'Sever the Lesser Impediments',
-							].map((subChap, i) => (
-								<Fragment key={subChap}>
+							{preparatory.inDetail.map((subChap, i) => (
+								<Fragment key={subChap.text}>
 									<ListItem
 										button
-										onClick={() => toggleExpandSubChap(subChap)}
+										onClick={() => toggleExpandSubChap(subChap.text)}
 										classes={{ root: styles.buttonBaseRoot }}
 									>
 										<ListItemText
-											primary={subChap}
+											primary={subChap.text}
 											primaryTypographyProps={{
 												component: 'h3',
 												variant: 'body1',
 											}}
 										/>
-										{openSubChap.includes(subChap) ? (
+										{openSubChap.includes(subChap.text) ? (
 											<ExpandLessRounded />
 										) : (
 											<ExpandMoreRounded />
 										)}
 									</ListItem>
-									<Collapse in={openSubChap.includes(subChap)}>
+									<Collapse in={openSubChap.includes(subChap.text)}>
 										<Box padding={2}>
-											<Typography color="textSecondary">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-												eget.
-											</Typography>
+											<FormattedText data={subChap.data} color="textSecondary" />
 										</Box>
 									</Collapse>
 								</Fragment>
@@ -214,69 +176,51 @@ export default function SubjectDrawerContents(props) {
 					</Box>
 				</Collapse>
 				<Divider />
-				<ListItem button onClick={() => toggleExpandSection(2)}>
-					<ListItemText
-						primary={`Instructions for ${state?.subject?.longName}`}
-						secondary="Specific to this meditation subject only"
-						primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
-						secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
-					/>
-					{open.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+				<ListItem
+					button
+					onClick={() => toggleExpandSection(2)}
+					component="header"
+					classes={{ root: styles.listItemRoot }}
+				>
+					<Box className={styles.listItemInner}>
+						<ListItemText
+							primary={`Instructions for ${state?.subject?.longName}`}
+							secondary="Specific to this meditation subject only"
+							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
+							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
+						/>
+						{open.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+					</Box>
 				</ListItem>
 				<Collapse
 					in={open.includes(2)}
 					timeout="auto"
-					classes={{ wrapperInner: styles.collapse }}
+					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>
-					{state?.subject?.instructions?.map((paragraph) =>
-						Object.values(paragraph)[0].map((text, index) =>
-							Object.keys(paragraph).includes('footNotes') ? (
-								<Typography key={Object.keys(text)[index]} paragraph>
-									{reactStringReplace(
-										text,
-										new RegExp(
-											`([${Object.keys(paragraph.footNotes).join('|')}]\\s)`,
-											'g'
-										),
-										(match, i) => (
-											<Fragment key={i}>
-												<Footnote
-													data={{
-														number: match.trim(),
-														content: paragraph.footNotes[match.trim()],
-													}}
-												>
-													[{match.trim()}]
-												</Footnote>
-												{'\u00A0'}
-											</Fragment>
-										)
-									)}
-								</Typography>
-							) : (
-								// put this above also, in and out of footnotes
-								<Typography key={Object.keys(text)[index]} paragraph>
-									{reactStringReplace(text, /<i>(.*)<\/i>/g, (match, i) => (
-										<Box key={i} component="span" fontStyle="italic">
-											{match}
-										</Box>
-									))}
-								</Typography>
-							)
-						)
-					)}
+					{state.subject && <FormattedText data={state.subject.instructions} />}
 				</Collapse>
 				<Divider />
-				<ListItem button onClick={() => toggleExpandSection(3)}>
-					<ListItemText
-						primary="Supplementary Instructions"
-						secondary="Applicable to all meditation subjects"
-						primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
-						secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
-					/>
-					{open.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+				<ListItem
+					button
+					onClick={() => toggleExpandSection(3)}
+					component="header"
+					classes={{ root: styles.listItemRoot }}
+				>
+					<Box className={styles.listItemInner}>
+						<ListItemText
+							primary="Supplementary Instructions"
+							secondary="Applicable to all meditation subjects"
+							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
+							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
+						/>
+						{open.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+					</Box>
 				</ListItem>
-				<Collapse in={open.includes(3)} timeout="auto">
+				<Collapse
+					in={open.includes(3)}
+					timeout="auto"
+					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
+				>
 					<Box>collapse!!3</Box>
 				</Collapse>
 			</List>
