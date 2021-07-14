@@ -33,6 +33,20 @@ export function showSubjectDrawer(show) {
 	};
 }
 
+export function toggleExpandSection(section) {
+	return {
+		type: 'TOGGLE_EXPAND_SECTION',
+		section,
+	};
+}
+
+export function toggleExpandPrepDetails(section) {
+	return {
+		type: 'TOGGLE_EXPAND_PREP_DETAILS',
+		section,
+	};
+}
+
 export function chooseSubject(subject) {
 	return {
 		type: 'CHOOSE_SUBJECT',

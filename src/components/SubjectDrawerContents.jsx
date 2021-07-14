@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 
 import {
 	Box,
@@ -20,7 +20,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { FormattedText } from '../utils';
 import { preparatory } from '../data/';
-import { showSubjectDrawer } from '../store';
+import {
+	showSubjectDrawer,
+	toggleExpandPrepDetails,
+	toggleExpandSection,
+} from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -76,25 +80,8 @@ export default function SubjectDrawerContents(props) {
 	const dispatch = useDispatch();
 
 	const subject = useSelector((state) => state.subject);
-
-	const [open, setOpen] = useState([2]);
-	const [openSubChap, setOpenSubChap] = useState([]);
-
-	function toggleExpandSection(section) {
-		setOpen((prev) =>
-			prev.includes(section)
-				? prev.filter((alreadyOpen) => alreadyOpen !== section)
-				: [...prev, section]
-		);
-	}
-
-	function toggleExpandSubChap(section) {
-		setOpenSubChap((prev) =>
-			prev.includes(section)
-				? prev.filter((alreadyOpen) => alreadyOpen !== section)
-				: [...prev, section]
-		);
-	}
+	const openSections = useSelector((state) => state.openSections);
+	const openPrepDetails = useSelector((state) => state.openPrepDetails);
 
 	function handleCloseDrawer() {
 		dispatch(showSubjectDrawer(false));
@@ -125,7 +112,7 @@ export default function SubjectDrawerContents(props) {
 			</ListContent> */}
 				<ListItem
 					button
-					onClick={() => toggleExpandSection(1)}
+					onClick={() => dispatch(toggleExpandSection(1))}
 					component="header"
 					classes={{ root: styles.listItemRoot }}
 				>
@@ -136,11 +123,11 @@ export default function SubjectDrawerContents(props) {
 							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
 							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
 						/>
-						{open.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+						{openSections.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 					</Box>
 				</ListItem>
 				<Collapse
-					in={open.includes(1)}
+					in={openSections.includes(1)}
 					timeout="auto"
 					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>
@@ -151,7 +138,7 @@ export default function SubjectDrawerContents(props) {
 								<Fragment key={subChap.text}>
 									<ListItem
 										button
-										onClick={() => toggleExpandSubChap(subChap.text)}
+										onClick={() => dispatch(toggleExpandPrepDetails(subChap.text))}
 										classes={{ root: styles.buttonBaseRoot }}
 									>
 										<ListItemText
@@ -161,13 +148,13 @@ export default function SubjectDrawerContents(props) {
 												variant: 'body1',
 											}}
 										/>
-										{openSubChap.includes(subChap.text) ? (
+										{openPrepDetails.includes(subChap.text) ? (
 											<ExpandLessRounded />
 										) : (
 											<ExpandMoreRounded />
 										)}
 									</ListItem>
-									<Collapse in={openSubChap.includes(subChap.text)}>
+									<Collapse in={openPrepDetails.includes(subChap.text)}>
 										<Box padding={2}>
 											<FormattedText data={subChap.data} color="textSecondary" />
 										</Box>
@@ -180,7 +167,7 @@ export default function SubjectDrawerContents(props) {
 				<Divider />
 				<ListItem
 					button
-					onClick={() => toggleExpandSection(2)}
+					onClick={() => dispatch(toggleExpandSection(2))}
 					component="header"
 					classes={{ root: styles.listItemRoot }}
 				>
@@ -191,11 +178,11 @@ export default function SubjectDrawerContents(props) {
 							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
 							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
 						/>
-						{open.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+						{openSections.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 					</Box>
 				</ListItem>
 				<Collapse
-					in={open.includes(2)}
+					in={openSections.includes(2)}
 					timeout="auto"
 					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>
@@ -204,7 +191,7 @@ export default function SubjectDrawerContents(props) {
 				<Divider />
 				<ListItem
 					button
-					onClick={() => toggleExpandSection(3)}
+					onClick={() => dispatch(toggleExpandSection(3))}
 					component="header"
 					classes={{ root: styles.listItemRoot }}
 				>
@@ -215,11 +202,11 @@ export default function SubjectDrawerContents(props) {
 							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
 							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
 						/>
-						{open.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
+						{openSections.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
 					</Box>
 				</ListItem>
 				<Collapse
-					in={open.includes(3)}
+					in={openSections.includes(3)}
 					timeout="auto"
 					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
 				>

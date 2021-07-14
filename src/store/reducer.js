@@ -5,6 +5,8 @@ const initialState = {
 	showFilters: false,
 	showFootnote: false,
 	showSubjectDrawer: false,
+	openSections: [2],
+	openPrepDetails: [],
 	subject: null,
 	footnote: null,
 	totalVisibleSubjects: 40,
@@ -73,6 +75,20 @@ export function reducer(state = initialState, action) {
 			return {
 				...state,
 				totalVisibleSubjects: action.number,
+			};
+		case 'TOGGLE_EXPAND_SECTION':
+			return {
+				...state,
+				openSections: state.openSections.includes(action.section)
+					? state.openSections.filter((alreadyOpen) => alreadyOpen !== action.section)
+					: [...state.openSections, action.section],
+			};
+		case 'TOGGLE_EXPAND_PREP_DETAILS':
+			return {
+				...state,
+				openPrepDetails: state.openPrepDetails.includes(action.section)
+					? state.openPrepDetails.filter((alreadyOpen) => alreadyOpen !== action.section)
+					: [...state.openPrepDetails, action.section],
 			};
 		default:
 			return state;
