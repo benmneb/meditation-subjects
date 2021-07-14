@@ -1,4 +1,5 @@
 export { inBrief } from './inBrief';
+export { inDetail } from './inDetail';
 export { apprehendFromAmong } from './apprehendFromAmong';
 export { avoidAMonastery } from './avoidAMonastery';
 export { fiveFactorsOfRestingPlace } from './fiveFactorsOfRestingPlace';

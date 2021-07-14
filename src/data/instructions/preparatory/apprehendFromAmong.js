@@ -52,7 +52,7 @@ export const apprehendFromAmong = [
 	},
 	{
 		132: [
-			'<i>Apprehend the sign</i> means that he must connect each aspect thus: “This is the preceding clause, this is the subsequent clause, this is its meaning, this is its intention, this is the simile.” When he listens attentively, apprehending the sign in this way, his meditation subject is well apprehended. Then, and because of that, he successfully attains distinction, but not otherwise. This clarifies the meaning of the words “and he must apprehend.”',
+			'Apprehend the sign means that he must connect each aspect thus: “This is the preceding clause, this is the subsequent clause, this is its meaning, this is its intention, this is the simile.” When he listens attentively, apprehending the sign in this way, his meditation subject is well apprehended. Then, and because of that, he successfully attains distinction, but not otherwise. This clarifies the meaning of the words “and he must apprehend.”',
 		],
 	},
 	{
