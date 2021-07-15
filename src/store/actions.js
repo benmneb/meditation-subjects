@@ -47,6 +47,12 @@ export function toggleExpandPrepDetails(section) {
 	};
 }
 
+export function resetSubjectDrawerState() {
+	return {
+		type: 'RESET_SUBJECT_DRAWER_STATE',
+	};
+}
+
 export function chooseSubject(subject) {
 	return {
 		type: 'CHOOSE_SUBJECT',

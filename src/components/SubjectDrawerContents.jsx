@@ -18,12 +18,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { useSelector, useDispatch } from 'react-redux';
 
+import ListContent from './ListContent';
+import ListHeader from './ListHeader';
+
 import { FormattedText } from '../utils';
 import { preparatory } from '../data/';
 import {
+	chooseSubject,
+	resetSubjectDrawerState,
 	showSubjectDrawer,
 	toggleExpandPrepDetails,
-	toggleExpandSection,
 } from '../store';
 
 const useStyles = makeStyles((theme) => ({
@@ -80,11 +84,12 @@ export default function SubjectDrawerContents(props) {
 	const dispatch = useDispatch();
 
 	const subject = useSelector((state) => state.subject);
-	const openSections = useSelector((state) => state.openSections);
 	const openPrepDetails = useSelector((state) => state.openPrepDetails);
 
 	function handleCloseDrawer() {
 		dispatch(showSubjectDrawer(false));
+		dispatch(chooseSubject(null));
+		dispatch(resetSubjectDrawerState());
 	}
 
 	return (
@@ -106,112 +111,61 @@ export default function SubjectDrawerContents(props) {
 			</AppBar>
 			<Box minHeight={120} />
 			<List component="section">
-				{/* <ListHeader number={i} primary={text.primary} secondary={text.secondary} />
-			<ListContent number={i}>
-				
-			</ListContent> */}
-				<ListItem
-					button
-					onClick={() => dispatch(toggleExpandSection(1))}
-					component="header"
-					classes={{ root: styles.listItemRoot }}
-				>
-					<Box className={styles.listItemInner}>
-						<ListItemText
-							primary="Preparatory Instructions"
-							secondary="Applicable to all meditation subjects"
-							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
-							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
-						/>
-						{openSections.includes(1) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
-					</Box>
-				</ListItem>
-				<Collapse
-					in={openSections.includes(1)}
-					timeout="auto"
-					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
-				>
-					<Box component="article">
-						<FormattedText data={preparatory.inBrief} />
-						<List>
-							{preparatory.inDetail.map((subChap, i) => (
-								<Fragment key={subChap.text}>
-									<ListItem
-										button
-										onClick={() => dispatch(toggleExpandPrepDetails(subChap.text))}
-										classes={{ root: styles.buttonBaseRoot }}
-									>
-										<ListItemText
-											primary={subChap.text}
-											primaryTypographyProps={{
-												component: 'h3',
-												variant: 'body1',
-											}}
-										/>
-										{openPrepDetails.includes(subChap.text) ? (
-											<ExpandLessRounded />
-										) : (
-											<ExpandMoreRounded />
-										)}
-									</ListItem>
-									<Collapse in={openPrepDetails.includes(subChap.text)}>
-										<Box padding={2}>
-											<FormattedText data={subChap.data} color="textSecondary" />
-										</Box>
-									</Collapse>
-								</Fragment>
-							))}
-						</List>
-					</Box>
-				</Collapse>
+				<ListHeader
+					number={1}
+					primary="Preparatory Instructions"
+					secondary="Applicable to all meditation subjects"
+				/>
+				<ListContent number={1}>
+					<FormattedText data={preparatory.inBrief} />
+					<List>
+						{preparatory.inDetail.map((subChap) => (
+							<Fragment key={subChap.text}>
+								<ListItem
+									button
+									onClick={() => dispatch(toggleExpandPrepDetails(subChap.text))}
+									classes={{ root: styles.buttonBaseRoot }}
+								>
+									<ListItemText
+										primary={subChap.text}
+										primaryTypographyProps={{
+											component: 'h3',
+											variant: 'body1',
+										}}
+									/>
+									{openPrepDetails.includes(subChap.text) ? (
+										<ExpandLessRounded />
+									) : (
+										<ExpandMoreRounded />
+									)}
+								</ListItem>
+								<Collapse in={openPrepDetails.includes(subChap.text)}>
+									<Box padding={2}>
+										<FormattedText data={subChap.data} color="textSecondary" />
+									</Box>
+								</Collapse>
+							</Fragment>
+						))}
+					</List>
+				</ListContent>
 				<Divider />
-				<ListItem
-					button
-					onClick={() => dispatch(toggleExpandSection(2))}
-					component="header"
-					classes={{ root: styles.listItemRoot }}
-				>
-					<Box className={styles.listItemInner}>
-						<ListItemText
-							primary={`Instructions for ${subject?.longName}`}
-							secondary="Specific to this meditation subject only"
-							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
-							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
-						/>
-						{openSections.includes(2) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
-					</Box>
-				</ListItem>
-				<Collapse
-					in={openSections.includes(2)}
-					timeout="auto"
-					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
-				>
+				<ListHeader
+					number={2}
+					primary={`Instructions for ${subject?.longName}`}
+					secondary="Specific to this meditation subject only"
+				/>
+				<ListContent number={2}>
 					{subject && <FormattedText data={subject.instructions} />}
-				</Collapse>
+				</ListContent>
 				<Divider />
-				<ListItem
-					button
-					onClick={() => dispatch(toggleExpandSection(3))}
-					component="header"
-					classes={{ root: styles.listItemRoot }}
-				>
-					<Box className={styles.listItemInner}>
-						<ListItemText
-							primary="Supplementary Instructions"
-							secondary="Applicable to all meditation subjects"
-							primaryTypographyProps={{ component: 'h2', variant: 'h6' }}
-							secondaryTypographyProps={{ style: { fontStyle: 'italic' } }}
-						/>
-						{openSections.includes(3) ? <ExpandLessRounded /> : <ExpandMoreRounded />}
-					</Box>
-				</ListItem>
-				<Collapse
-					in={openSections.includes(3)}
-					timeout="auto"
-					classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
-				>
-					<Box>collapse!!3</Box>
-				</Collapse>
+				<ListHeader
+					number={3}
+					primary="Supplementary Instructions"
+					secondary="Applicable to all meditation subjects"
+				/>
+				<ListContent number={3}>
+					<Typography>collapse!!3</Typography>
+				</ListContent>
 			</List>
 		</>
 	);

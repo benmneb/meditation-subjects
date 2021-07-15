@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { SubjectDrawerContents } from './index';
-import { chooseSubject, showSubjectDrawer } from '../store';
+import { chooseSubject, resetSubjectDrawerState, showSubjectDrawer } from '../store';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -27,6 +27,7 @@ export default function SubjectDrawer() {
 	function handleClose() {
 		dispatch(showSubjectDrawer(false));
 		dispatch(chooseSubject(null));
+		dispatch(resetSubjectDrawerState());
 	}
 
 	return (

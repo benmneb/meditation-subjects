@@ -90,6 +90,12 @@ export function reducer(state = initialState, action) {
 					? state.openPrepDetails.filter((alreadyOpen) => alreadyOpen !== action.section)
 					: [...state.openPrepDetails, action.section],
 			};
+		case 'RESET_SUBJECT_DRAWER_STATE':
+			return {
+				...state,
+				openSections: initialState.openSections,
+				openPrepDetails: initialState.openPrepDetails,
+			};
 		default:
 			return state;
 	}
