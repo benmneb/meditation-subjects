@@ -1,2 +1,2 @@
-export * as kasina from './kasina';
+export * from './meditations';
 export * as preparatory from './preparatory';
