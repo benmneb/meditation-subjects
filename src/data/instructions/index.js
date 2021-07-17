@@ -1,2 +1,2 @@
-export * from './meditations';
+export * from './subjects';
 export * as preparatory from './preparatory';

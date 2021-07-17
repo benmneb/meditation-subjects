@@ -1,4 +1,4 @@
-export const limitedSpaceKasina = [
+export const space = [
 	{
 		24: [
 			'Of the limited-space kasiṇa it is said: “One who is learning the space kasiṇa apprehends the sign in a hole in a wall, or in a keyhole, or in a window opening.” So firstly, when someone has merit, having had previous practice, the sign arises in him when he sees any [such gap as a] hole in a wall.',

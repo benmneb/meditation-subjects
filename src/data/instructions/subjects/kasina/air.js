@@ -1,4 +1,4 @@
-export const airKasina = [
+export const air = [
 	{
 		9: [
 			'Anyone who wants to develop the air kasiṇa should apprehend the sign in air. And that is done either by sight or by touch. For this is said in the Commentaries: “One who is learning the air kasiṇa apprehends the sign in air. He notices the tops of [growing] sugarcane moving to and fro; or he notices the tops of bamboos, or the tops of trees, or the ends of the hair, moving to and fro; or he notices the touch of it on the body.',

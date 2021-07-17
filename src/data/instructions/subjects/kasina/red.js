@@ -1,4 +1,4 @@
-export const redKasina = [
+export const red = [
 	{
 		17: [
 			'This is said: “One who is learning the red kasiṇa apprehends the sign in red, [174] either in a flower or in a cloth or in a colour element.” Therefore here too, when someone has merit, having had previous practice, the sign arises in him when he sees a bandhujīvaka (hibiscus) bush, etc., in flower, or such flowers spread out, or a red cloth or gem or colour element.',

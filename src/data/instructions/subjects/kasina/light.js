@@ -1,4 +1,4 @@
-export const lightKasina = [
+export const light = [
 	{
 		21: [
 			'Of the light kasiṇa it is said: “One who is learning the light kasiṇa apprehends the sign in light in a hole in a wall, or in a keyhole, or in a window opening.” So firstly, when someone has merit, having had previous practice, the sign arises in him when he sees the circle thrown on a wall or a floor by sunlight or moonlight entering through a hole in a wall, etc., or when he sees a circle thrown on the ground by sunlight or moonlight coming through a gap in the branches of a dense-leaved tree or through a gap in a hut made of closely packed branches.',

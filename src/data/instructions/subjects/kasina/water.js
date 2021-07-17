@@ -1,4 +1,4 @@
-export const waterKasina = [
+export const water = [
 	{
 		1: [
 			'When someone has had practice in previous [lives], the sign arises for him in water that is not made up, such as a pool, a lake, a lagoon, or the ocean as in the case of the Elder Cūḷa-Sīva. The venerable one, it seems, thought to abandon gain and honour and live a secluded life. He boarded a ship at Mahātittha (Mannar) and sailed to Jambudīpa (India). As he gazed at the ocean meanwhile, the kasiṇa sign, the counterpart of that ocean, arose in him.',

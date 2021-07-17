@@ -222,7 +222,7 @@ export const subjects = [
 			],
 		},
 		color: colors.blueGrey[900],
-		instructions: instructions.kasina.limitedSpace,
+		instructions: instructions.kasina.space,
 	},
 	{
 		id: 11,

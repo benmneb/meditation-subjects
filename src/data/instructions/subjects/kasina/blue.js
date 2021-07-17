@@ -1,4 +1,4 @@
-export const blueKasina = [
+export const blue = [
 	{
 		12: [
 			'It is said [in the Commentaries]: “One who is learning the blue kasiṇa apprehends the sign in blue, whether in a flower or in a cloth or in a colour element.”3 Firstly, when someone has merit, having had previous practice, the sign arises in him when he sees a bush with blue flowers, or such flowers spread out on a place of offering, or any blue cloth or gem.',

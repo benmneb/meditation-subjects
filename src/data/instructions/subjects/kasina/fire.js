@@ -1,4 +1,4 @@
-export const fireKasina = [
+export const fire = [
 	{
 		5: [
 			'Anyone who wants to develop the fire kasina should apprehend the sign in fire. Herein, when someone with merit, having had previous practice, is apprehending the sign, it arises in him in any sort of fire, not made up, as he looks at the fiery combustion in a lamp’s flame or in a furnace or in a place for baking bowls or in a forest conflagration, as in the Elder Cittagutta’s case. The sign arose in that elder as he was looking at a lamp’s flame while he was in the Uposatha house on the day of preaching the Dhamma.',

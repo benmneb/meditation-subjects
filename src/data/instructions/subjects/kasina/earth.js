@@ -1,4 +1,4 @@
-export const earthKasina = [
+export const earth = [
 	{
 		21: [
 			'When a bhikkhu has thus severed the lesser impediments, then, on his return from his alms round after his meal and after he has got rid of drowsiness due to the meal, he should sit down comfortably in a secluded place and apprehend the sign in earth that is either made up or not made up.',
