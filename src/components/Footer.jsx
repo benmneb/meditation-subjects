@@ -53,7 +53,7 @@ export default function Footer() {
 
   function handleSuttaClick() {
     return window.open(
-      `https://suttacentral.net/an5.73/en/sujato?ref=${window.location.href}`,
+      `https://suttacentral.net/an5.73/en/sujato?ref=${window.location.host}`,
       '_blank',
       'noopener'
     );
