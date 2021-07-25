@@ -14,7 +14,13 @@ export { thirdJhana } from './thirdJhana';
 export { fourthJhana } from './fourthJhana';
 export { fivefoldReckoningOfJhana } from './fivefoldReckoningOfJhana';
 // chapter XI - concentration (conclusion)
-
+export { benefitsOfConcentration } from './benefitsOfConcentration';
 // chapter XII - the supernormal powers
-
+export { fiveKindsOfDirectKnowledge } from './fiveKindsOfDirectKnowledge';
+export { kindsOfSupernormalPower } from './kindsOfSupernormalPower';
 // chapter XIII - other direct-knowledges
+export { divineEar } from './divineEar';
+export { penetrationOfMinds } from './penetrationOfMinds';
+export { recollectionOfPastLives } from './recollectionOfPastLives';
+export { divineEye } from './divineEye';
+export { general } from './general';
