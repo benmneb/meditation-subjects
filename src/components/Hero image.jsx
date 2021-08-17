@@ -95,7 +95,10 @@ export default function Hero(props) {
 			<Box
 				component="hgroup"
 				className={styles.titleBox}
-				style={{ transform: `translate3d(0, ${offset * 0.51}px, 0)` }}
+				style={{
+					transform: `translateY(${offset * 0.51}px)`,
+					opacity: `${1 - offset / 500}`,
+				}}
 			>
 				<Typography component="h1" variant="h2" gutterBottom>
 					The Buddha's 40 Meditation Subjects
