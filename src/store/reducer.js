@@ -7,6 +7,7 @@ const initialState = {
 	showSubjectDrawer: false,
 	openSections: [2],
 	openPrepDetails: [],
+	openSuppDetails: [],
 	subject: null,
 	footnote: null,
 	totalVisibleSubjects: 40,
@@ -42,22 +43,22 @@ const initialState = {
 		maxAbsorption: '',
 		temperaments: [],
 	},
-};
+}
 
 export function reducer(state = initialState, action) {
 	switch (action.type) {
 		case 'TOGGLE_ABOUT_DRAWER':
-			return { ...state, showAboutDrawer: action.show };
+			return { ...state, showAboutDrawer: action.show }
 		case 'TOGGLE_FILTERS':
-			return { ...state, showFilters: action.show };
+			return { ...state, showFilters: action.show }
 		case 'SHOW_SUBJECT_DRAWER':
-			return { ...state, showSubjectDrawer: action.show };
+			return { ...state, showSubjectDrawer: action.show }
 		case 'CHOOSE_SUBJECT':
-			return { ...state, subject: action.subject };
+			return { ...state, subject: action.subject }
 		case 'SHOW_FOOTNOTE':
-			return { ...state, showFootnote: action.show };
+			return { ...state, showFootnote: action.show }
 		case 'ACTIVE_FOOTNOTE':
-			return { ...state, footnote: action.data };
+			return { ...state, footnote: action.data }
 		case 'APPLY_FILTER':
 			return {
 				...state,
@@ -65,17 +66,17 @@ export function reducer(state = initialState, action) {
 					...state.activeFilters,
 					[action.source]: action.filter,
 				},
-			};
+			}
 		case 'RESET_FILTERS':
 			return {
 				...state,
 				activeFilters: initialState.activeFilters,
-			};
+			}
 		case 'SET_TOTAL_VISIBLE_SUBJECTS':
 			return {
 				...state,
 				totalVisibleSubjects: action.number,
-			};
+			}
 		case 'TOGGLE_EXPAND_SECTION':
 			return {
 				...state,
@@ -84,7 +85,7 @@ export function reducer(state = initialState, action) {
 							(alreadyOpen) => alreadyOpen !== action.section
 					  )
 					: [...state.openSections, action.section],
-			};
+			}
 		case 'TOGGLE_EXPAND_PREP_DETAILS':
 			return {
 				...state,
@@ -93,14 +94,23 @@ export function reducer(state = initialState, action) {
 							(alreadyOpen) => alreadyOpen !== action.section
 					  )
 					: [...state.openPrepDetails, action.section],
-			};
+			}
+		case 'TOGGLE_EXPAND_SUPP_DETAILS':
+			return {
+				...state,
+				openSuppDetails: state.openSuppDetails.includes(action.section)
+					? state.openSuppDetails.filter(
+							(alreadyOpen) => alreadyOpen !== action.section
+					  )
+					: [...state.openSuppDetails, action.section],
+			}
 		case 'RESET_SUBJECT_DRAWER_STATE':
 			return {
 				...state,
 				openSections: initialState.openSections,
 				openPrepDetails: initialState.openPrepDetails,
-			};
+			}
 		default:
-			return state;
+			return state
 	}
 }

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment } from 'react'
 
 import {
 	Box,
@@ -12,27 +12,28 @@ import {
 	Typography,
 	IconButton,
 	Tooltip,
-} from '@material-ui/core';
+} from '@material-ui/core'
 import {
 	CloseRounded,
 	ExpandLessRounded,
 	ExpandMoreRounded,
-} from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
+} from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import ListContent from './ListContent';
-import ListHeader from './ListHeader';
+import ListContent from './ListContent'
+import ListHeader from './ListHeader'
 
-import { FormattedText } from '../utils';
-import { preparatory } from '../data/';
+import { FormattedText } from '../utils'
+import { preparatory, supplementary } from '../data/'
 import {
 	chooseSubject,
 	resetSubjectDrawerState,
 	showSubjectDrawer,
 	toggleExpandPrepDetails,
-} from '../store';
+	toggleExpandSuppDetails,
+} from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -46,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		color: (props) =>
 			props?.color && theme.palette.getContrastText(props?.color),
+		[theme.breakpoints.only('xs')]: {
+			textAlign: 'left',
+		},
 	},
 	title: {
 		marginLeft: theme.spacing(2),
@@ -82,19 +86,20 @@ const useStyles = makeStyles((theme) => ({
 	borderRadius: {
 		borderRadius: theme.spacing(2, 2, 0, 0),
 	},
-}));
+}))
 
 export default function SubjectDrawerContents(props) {
-	const styles = useStyles(props);
-	const dispatch = useDispatch();
+	const styles = useStyles(props)
+	const dispatch = useDispatch()
 
-	const subject = useSelector((state) => state.subject);
-	const openPrepDetails = useSelector((state) => state.openPrepDetails);
+	const subject = useSelector((state) => state.subject)
+	const openPrepDetails = useSelector((state) => state.openPrepDetails)
+	const openSuppDetails = useSelector((state) => state.openSuppDetails)
 
 	function handleCloseDrawer() {
-		dispatch(showSubjectDrawer(false));
-		dispatch(chooseSubject(null));
-		dispatch(resetSubjectDrawerState());
+		dispatch(showSubjectDrawer(false))
+		dispatch(chooseSubject(null))
+		dispatch(resetSubjectDrawerState())
 	}
 
 	return (
@@ -173,9 +178,39 @@ export default function SubjectDrawerContents(props) {
 					secondary="Applicable to all meditation subjects"
 				/>
 				<ListContent number={3}>
-					<Typography>collapse!!3</Typography>
+					<List>
+						{supplementary.organisedData.map((chapter) => (
+							<Fragment key={chapter.text}>
+								<ListItem
+									button
+									onClick={() =>
+										dispatch(toggleExpandSuppDetails(chapter.text))
+									}
+									classes={{ root: styles.buttonBaseRoot }}
+								>
+									<ListItemText
+										primary={chapter.text}
+										primaryTypographyProps={{
+											component: 'h3',
+											variant: 'body1',
+										}}
+									/>
+									{openSuppDetails.includes(chapter.text) ? (
+										<ExpandLessRounded />
+									) : (
+										<ExpandMoreRounded />
+									)}
+								</ListItem>
+								<Collapse in={openSuppDetails.includes(chapter.text)}>
+									<Box padding={2}>
+										<FormattedText data={chapter.data} color="textSecondary" />
+									</Box>
+								</Collapse>
+							</Fragment>
+						))}
+					</List>
 				</ListContent>
 			</List>
 		</>
-	);
+	)
 }
