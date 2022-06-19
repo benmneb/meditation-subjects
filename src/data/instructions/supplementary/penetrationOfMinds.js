@@ -32,4 +32,4 @@ export const penetrationOfMinds = [
 			'So the bhikkhu who has acquired the knowledge of penetration of hearts understands all these [manners of consciousness, namely, the manner of] consciousness affected by greed as affected by greed … [the unliberated manner of] consciousness as unliberated.',
 		],
 	},
-];
+]

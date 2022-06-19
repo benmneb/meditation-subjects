@@ -1,10 +1,10 @@
-import { Box, ListItem, ListItemText } from '@material-ui/core';
-import { ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
+import { Box, ListItem, ListItemText } from '@material-ui/core'
+import { ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { toggleExpandSection } from '../store';
+import { toggleExpandSection } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	listItemRoot: {
@@ -15,15 +15,15 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		width: theme.mixins.subjectDrawerContents.maxWidth,
 	},
-}));
+}))
 
 export default function ListHeader(props) {
-	const { number, primary, secondary } = props;
+	const { number, primary, secondary } = props
 
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
-	const openSections = useSelector((state) => state.openSections);
+	const openSections = useSelector((state) => state.openSections)
 
 	return (
 		<ListItem
@@ -46,5 +46,5 @@ export default function ListHeader(props) {
 				)}
 			</Box>
 		</ListItem>
-	);
+	)
 }

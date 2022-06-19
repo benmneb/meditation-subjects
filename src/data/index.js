@@ -1,2 +1,2 @@
-export { subjects } from './subjects';
-export * from './instructions';
+export { subjects } from './subjects'
+export * from './instructions'

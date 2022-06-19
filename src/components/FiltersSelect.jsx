@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 import {
 	Checkbox,
@@ -8,10 +8,10 @@ import {
 	MenuItem,
 	OutlinedInput,
 	Select,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
 	formControl: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 		paddingTop: 3,
 		paddingBottom: 3,
 	},
-}));
+}))
 
 function styled(camelCase) {
 	return camelCase
@@ -37,18 +37,18 @@ function styled(camelCase) {
 		.replace(/^./, (match) => match.toUpperCase())
 		.trim()
 		.replace(/s$/, '(s)')
-		.replace(/for$/, 'for...');
+		.replace(/for$/, 'for...')
 }
 
 export default function FiltersSelect(props) {
-	const { handleChange, filter, multiSelect } = props;
+	const { handleChange, filter, multiSelect } = props
 
-	const styles = useStyles();
+	const styles = useStyles()
 
-	const activeFilters = useSelector((state) => state.activeFilters);
-	const filters = useSelector((state) => state.filters);
+	const activeFilters = useSelector((state) => state.activeFilters)
+	const filters = useSelector((state) => state.filters)
 
-	const styledFilter = styled(filter);
+	const styledFilter = styled(filter)
 
 	return (
 		<FormControl
@@ -96,15 +96,15 @@ export default function FiltersSelect(props) {
 				))}
 			</Select>
 		</FormControl>
-	);
+	)
 }
 
 FiltersSelect.propTypes = {
 	handleChange: PropTypes.func.isRequired,
 	filter: PropTypes.any.isRequired,
 	multiSelect: PropTypes.bool.isRequired,
-};
+}
 
 FiltersSelect.defaultProps = {
 	multiSelect: false,
-};
+}

@@ -1,1 +1,1 @@
-export * as kasina from './kasina';
+export * as kasina from './kasina'

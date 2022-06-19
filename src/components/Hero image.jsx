@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import clsx from 'clsx';
+import { useState, useEffect } from 'react'
+import clsx from 'clsx'
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Hidden, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { Box, Hidden, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -54,38 +54,38 @@ const useStyles = makeStyles((theme) => ({
 		opacity: 0.3,
 		zIndex: 0,
 	},
-}));
+}))
 
 export default function Hero(props) {
-	const styles = useStyles(props);
+	const styles = useStyles(props)
 
-	const [imageLoaded, setImageLoaded] = useState(false);
-	const [offset, setOffset] = useState(0);
+	const [imageLoaded, setImageLoaded] = useState(false)
+	const [offset, setOffset] = useState(0)
 
 	// load image on pageload
 	useEffect(() => {
-		const { imageSrc } = props;
+		const { imageSrc } = props
 
-		const image = new Image();
-		image.src = imageSrc;
+		const image = new Image()
+		image.src = imageSrc
 
 		image.onload = () => {
-			setImageLoaded(true);
-		};
-	}, [props]);
+			setImageLoaded(true)
+		}
+	}, [props])
 
 	// create parallax effect
 	useEffect(() => {
 		function handleScroll() {
-			setOffset(window.pageYOffset);
+			setOffset(window.pageYOffset)
 		}
 
-		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleScroll)
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [offset]);
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [offset])
 
 	return (
 		<Box component="section" className={styles.header}>
@@ -111,5 +111,5 @@ export default function Hero(props) {
 			</Box>
 			<Box className={styles.overlay} />
 		</Box>
-	);
+	)
 }

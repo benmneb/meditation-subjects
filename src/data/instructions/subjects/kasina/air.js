@@ -14,4 +14,4 @@ export const air = [
 			'Here the learning sign appears to move like the swirl of hot [steam] on rice gruel just withdrawn from an oven. The counterpart sign is quiet and motionless. The rest should be understood in the way already described.',
 		],
 	},
-];
+]

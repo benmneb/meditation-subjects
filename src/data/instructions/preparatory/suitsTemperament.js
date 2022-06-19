@@ -347,4 +347,4 @@ export const suitsTemperament = [
 			36: '“In addition to the five things” (not quoted) dealt with earlier in the sutta, namely, perfection of virtue, good friendship, hearing suitable things, energy, and understanding.',
 		},
 	},
-];
+]

@@ -12,4 +12,4 @@ export const yellow = [
 			'Anyone else should make a kasiṇa, in the way described for the blue kasiṇa, with  kaṇikāra flowers, etc., or with yellow cloth or with a colour element. He should bring it to mind as “yellow, yellow.” The rest is as before.',
 		],
 	},
-];
+]

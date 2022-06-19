@@ -162,4 +162,4 @@ export const tenImpediments = [
 			'10. Supernormal powers are the supernormal powers of the ordinary man. They are hard to maintain, like a prone infant or like young corn, and the slightest thing breaks them. But they are an impediment for insight, not for concentration, since they are obtainable through concentration. So the supernormal powers are an impediment that should be severed by one who seeks insight; the others are impediments to be severed by one who seeks concentration. This, in the first place, is the detailed explanation of the impediments.',
 		],
 	},
-];
+]

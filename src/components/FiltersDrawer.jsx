@@ -1,28 +1,28 @@
-import { SwipeableDrawer, useMediaQuery } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { SwipeableDrawer, useMediaQuery } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { Filters } from './index';
-import { toggleFilters } from '../store';
+import { Filters } from './index'
+import { toggleFilters } from '../store'
 
 const useStyles = makeStyles({
 	drawerPaper: {
 		width: 290,
 		maxWidth: '80vw',
 	},
-});
+})
 
 export default function FiltersDrawer() {
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
-	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
-	const showFilters = useSelector((state) => state.showFilters);
+	const showFilters = useSelector((state) => state.showFilters)
 
 	function handleToggleFilters() {
-		dispatch(toggleFilters(!showFilters));
+		dispatch(toggleFilters(!showFilters))
 	}
 
 	return (
@@ -37,5 +37,5 @@ export default function FiltersDrawer() {
 		>
 			<Filters smDown={smDown} />
 		</SwipeableDrawer>
-	);
+	)
 }

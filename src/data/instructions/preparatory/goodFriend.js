@@ -101,4 +101,4 @@ export const goodFriend = [
 			'This is the detailed explanation of the words “approach the good friend, the giver of a meditation subject.',
 		],
 	},
-];
+]

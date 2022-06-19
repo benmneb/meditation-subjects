@@ -46,4 +46,4 @@ export const divineEar = [
 			'The explanation of the divine ear element is ended.',
 		],
 	},
-];
+]

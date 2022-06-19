@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
 	Button,
 	Dialog,
@@ -7,13 +7,13 @@ import {
 	DialogContentText,
 	DialogTitle,
 	Paper,
-} from '@material-ui/core';
+} from '@material-ui/core'
 
-import Draggable from 'react-draggable';
+import Draggable from 'react-draggable'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { showFootnote, activeFootnote } from '../store';
+import { showFootnote, activeFootnote } from '../store'
 
 function PaperComponent(props) {
 	return (
@@ -23,21 +23,21 @@ function PaperComponent(props) {
 		>
 			<Paper {...props} />
 		</Draggable>
-	);
+	)
 }
 
 export default function FootnoteDialog() {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
-	const isFootnoteShown = useSelector((state) => state.showFootnote);
-	const footnote = useSelector((state) => state.footnote);
+	const isFootnoteShown = useSelector((state) => state.showFootnote)
+	const footnote = useSelector((state) => state.footnote)
 
 	function handleClose() {
-		dispatch(showFootnote(false));
+		dispatch(showFootnote(false))
 	}
 
 	function handleExited() {
-		dispatch(activeFootnote(null));
+		dispatch(activeFootnote(null))
 	}
 
 	return (
@@ -60,5 +60,5 @@ export default function FootnoteDialog() {
 				</Button>
 			</DialogActions>
 		</Dialog>
-	);
+	)
 }

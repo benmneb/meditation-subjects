@@ -177,4 +177,4 @@ export const general = [
 			'And when [the knowledge] described here both as “having an internal object” and “having an external object” knows [these objects] now internally and now externally, it is then said that it has an internal-external object as well.',
 		],
 	},
-];
+]

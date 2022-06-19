@@ -1,7 +1,7 @@
-import { CssBaseline } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core'
+import { ThemeProvider } from '@material-ui/core/styles'
 
-import { useTheme } from './assets';
+import { useTheme } from './assets'
 import {
 	Hero,
 	TopBar,
@@ -11,12 +11,12 @@ import {
 	Footer,
 	SubjectDrawer,
 	FootnoteDialog,
-} from './components';
+} from './components'
 
-import heroImg from './assets/hero.jpg';
+import heroImg from './assets/hero.jpg'
 
 export default function App() {
-	const theme = useTheme();
+	const theme = useTheme()
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -30,5 +30,5 @@ export default function App() {
 			<SubjectDrawer />
 			<FootnoteDialog />
 		</ThemeProvider>
-	);
+	)
 }

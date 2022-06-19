@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 import {
 	AppBar,
 	Hidden,
@@ -7,18 +7,18 @@ import {
 	Tooltip,
 	Typography,
 	useMediaQuery,
-} from '@material-ui/core';
+} from '@material-ui/core'
 import {
 	InfoOutlined,
 	FilterListRounded,
 	CloseRounded,
-} from '@material-ui/icons';
-import { makeStyles, fade } from '@material-ui/core/styles';
+} from '@material-ui/icons'
+import { makeStyles, fade } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { Filters } from './index';
-import { toggleAboutDrawer, toggleFilters } from '../store';
+import { Filters } from './index'
+import { toggleAboutDrawer, toggleFilters } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	appBar: {
@@ -41,24 +41,24 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		top: theme.spacing(-1),
 	},
-}));
+}))
 
 export default function TopBar() {
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
-	const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
-	const showFilters = useSelector((state) => state.showFilters);
+	const showAboutDrawer = useSelector((state) => state.showAboutDrawer)
+	const showFilters = useSelector((state) => state.showFilters)
 	const totalVisibleSubjects = useSelector(
 		(state) => state.totalVisibleSubjects
-	);
-	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+	)
+	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'))
 
 	function handleShowAboutDrawer() {
-		dispatch(toggleAboutDrawer(!showAboutDrawer));
+		dispatch(toggleAboutDrawer(!showAboutDrawer))
 	}
 	function handleToggleFilters() {
-		dispatch(toggleFilters(!showFilters));
+		dispatch(toggleFilters(!showFilters))
 	}
 
 	return (
@@ -103,5 +103,5 @@ export default function TopBar() {
 				</Toolbar>
 			</Hidden>
 		</AppBar>
-	);
+	)
 }

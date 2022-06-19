@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Fade, Hidden, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { Box, Fade, Hidden, Typography } from '@material-ui/core'
 
-import heroImg from '../assets/hero.jpg';
+import heroImg from '../assets/hero.jpg'
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -46,30 +46,30 @@ const useStyles = makeStyles((theme) => ({
 		opacity: 0.3,
 		zIndex: 0,
 	},
-}));
+}))
 
 export default function Hero(props) {
-	const { fadeInDuration, imgAltText } = props;
+	const { fadeInDuration, imgAltText } = props
 
-	const styles = useStyles();
+	const styles = useStyles()
 
-	const [offset, setOffset] = useState(0);
-	const [imageLoading, setImageLoading] = useState(true);
+	const [offset, setOffset] = useState(0)
+	const [imageLoading, setImageLoading] = useState(true)
 
 	useEffect(() => {
 		function handleScroll() {
-			setOffset(window.pageYOffset);
+			setOffset(window.pageYOffset)
 		}
 
-		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleScroll)
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [offset]);
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [offset])
 
 	function handleImageLoad() {
-		setImageLoading(false);
+		setImageLoading(false)
 	}
 
 	return (
@@ -104,5 +104,5 @@ export default function Hero(props) {
 			</Box>
 			<Box className={styles.overlay} />
 		</Box>
-	);
+	)
 }

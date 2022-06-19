@@ -43,4 +43,4 @@ export const masteryInFiveWays = [
 			'When he has emerged from the first jhāna, applied and sustained thought appear gross to him as he reviews the jhāna factors with mindfulness and full awareness, while happiness and bliss and unification of mind appear peaceful. Then, as he brings that same sign to mind as “earth, earth” again and again with the purpose of abandoning the gross factors and obtaining the peaceful factors, [knowing] “now the second jhāna will arise,” there arises in him mind-door adverting with that same earth kasiṇa as its object, interrupting the life-continuum. After that, either four or five impulsions impel on that same object, the last one of which is an impulsion of the fine-material sphere belonging to the second jhāna. The rest are of the sense sphere of the kinds already stated (§74).',
 		],
 	},
-];
+]

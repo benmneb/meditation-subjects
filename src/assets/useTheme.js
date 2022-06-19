@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo } from 'react'
 
-import { useMediaQuery } from '@material-ui/core';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { useMediaQuery } from '@material-ui/core'
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
 export function useTheme() {
-	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
 	const theme = useMemo(
 		() =>
@@ -41,7 +41,7 @@ export function useTheme() {
 				})
 			),
 		[prefersDarkMode]
-	);
+	)
 
-	return theme;
+	return theme
 }

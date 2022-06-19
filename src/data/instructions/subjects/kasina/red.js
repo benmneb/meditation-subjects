@@ -9,4 +9,4 @@ export const red = [
 			'But anyone else should make a kasiṇa, in the way already described for the blue kasiṇa, with jayasumana flowers or bandhujīvaka or red koraṇḍaka flowers, etc., or with red cloth or with a colour element. He should bring it to mind as “red, red.” The rest is as before.',
 		],
 	},
-];
+]

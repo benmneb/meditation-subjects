@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 import {
 	Button,
 	Card,
@@ -6,11 +6,11 @@ import {
 	CardContent,
 	CardHeader,
 	Typography,
-} from '@material-ui/core';
+} from '@material-ui/core'
 
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 
-import { chooseSubject, showSubjectDrawer } from '../store';
+import { chooseSubject, showSubjectDrawer } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
@@ -54,16 +54,16 @@ const useStyles = makeStyles((theme) => ({
 		color: (props) => theme.palette.getContrastText(props.bgColor),
 		padding: theme.spacing(1, 1.5),
 	},
-}));
+}))
 
 export default function MeditationCard({ data, ...props }) {
-	const styles = useStyles(props);
+	const styles = useStyles(props)
 
-	const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
 	function handleClick() {
-		dispatch(showSubjectDrawer(true));
-		dispatch(chooseSubject(data));
+		dispatch(showSubjectDrawer(true))
+		dispatch(chooseSubject(data))
 	}
 
 	return (
@@ -89,5 +89,5 @@ export default function MeditationCard({ data, ...props }) {
 				</CardActions>
 			</Card>
 		</Button>
-	);
+	)
 }

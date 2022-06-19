@@ -792,4 +792,4 @@ export const kindsOfSupernormalPower = [
 			'This is success as the mind-made [body].',
 		],
 	},
-];
+]

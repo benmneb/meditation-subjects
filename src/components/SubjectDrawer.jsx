@@ -1,37 +1,37 @@
-import { SwipeableDrawer } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { SwipeableDrawer } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { SubjectDrawerContents } from './index';
+import { SubjectDrawerContents } from './index'
 import {
 	chooseSubject,
 	resetSubjectDrawerState,
 	showSubjectDrawer,
-} from '../store';
+} from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		height: '97%',
 		borderRadius: theme.spacing(2, 2, 0, 0),
 	},
-}));
+}))
 
 export default function SubjectDrawer() {
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
-	const isSubjectDrawOpen = useSelector((state) => state.showSubjectDrawer);
-	const subject = useSelector((state) => state.subject);
+	const isSubjectDrawOpen = useSelector((state) => state.showSubjectDrawer)
+	const subject = useSelector((state) => state.subject)
 
 	function handleOpen() {
-		dispatch(showSubjectDrawer(true));
+		dispatch(showSubjectDrawer(true))
 	}
 
 	function handleClose() {
-		dispatch(showSubjectDrawer(false));
-		dispatch(chooseSubject(null));
-		dispatch(resetSubjectDrawerState());
+		dispatch(showSubjectDrawer(false))
+		dispatch(chooseSubject(null))
+		dispatch(resetSubjectDrawerState())
 	}
 
 	return (
@@ -46,5 +46,5 @@ export default function SubjectDrawer() {
 		>
 			<SubjectDrawerContents color={subject?.color} />
 		</SwipeableDrawer>
-	);
+	)
 }

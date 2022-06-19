@@ -1,11 +1,11 @@
-import { Box, Button, Fade, Typography } from '@material-ui/core';
-import { RotateLeftRounded } from '@material-ui/icons';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Box, Button, Fade, Typography } from '@material-ui/core'
+import { RotateLeftRounded } from '@material-ui/icons'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { FiltersSelect } from './index';
-import { applyFilter, resetFilters } from '../store';
+import { FiltersSelect } from './index'
+import { applyFilter, resetFilters } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
@@ -17,34 +17,34 @@ const useStyles = makeStyles((theme) => ({
 		height: (props) => (props.smDown ? '100%' : 'auto'),
 		maxHeight: (props) => (props.smDown ? 500 : 'auto'),
 	},
-}));
+}))
 
 export default function Filters(props) {
-	const { smDown } = props;
+	const { smDown } = props
 
-	const styles = useStyles(props);
-	const theme = useTheme();
-	const dispatch = useDispatch();
+	const styles = useStyles(props)
+	const theme = useTheme()
+	const dispatch = useDispatch()
 
-	const activeFilters = useSelector((state) => state.activeFilters);
-	const showFilters = useSelector((state) => state.showFilters);
-	const filters = useSelector((state) => state.filters);
+	const activeFilters = useSelector((state) => state.activeFilters)
+	const showFilters = useSelector((state) => state.showFilters)
+	const filters = useSelector((state) => state.filters)
 
 	const noFiltersApplied =
 		Object.values(activeFilters)
 			.flat()
-			.filter((e) => String(e).trim()).length < 1;
+			.filter((e) => String(e).trim()).length < 1
 
 	function handleChange(event, source) {
 		const filter = Array.isArray(event.target.value)
 			? [...event.target.value]
-			: event.target.value;
+			: event.target.value
 
-		dispatch(applyFilter(source, filter));
+		dispatch(applyFilter(source, filter))
 	}
 
 	function handleReset() {
-		dispatch(resetFilters());
+		dispatch(resetFilters())
 	}
 
 	return (
@@ -76,5 +76,5 @@ export default function Filters(props) {
 				</Button>
 			</Box>
 		</Fade>
-	);
+	)
 }

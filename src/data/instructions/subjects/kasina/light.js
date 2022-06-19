@@ -14,4 +14,4 @@ export const light = [
 			'Here the learning sign is like the circle thrown on the wall or the ground. The counterpart sign is like a compact bright cluster of lights. The rest is as before.',
 		],
 	},
-];
+]

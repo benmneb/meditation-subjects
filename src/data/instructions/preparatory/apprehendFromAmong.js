@@ -60,4 +60,4 @@ export const apprehendFromAmong = [
 			'At this point the clauses approach the good friend, the giver of a meditation subject, and he should apprehend from among the forty meditation subjects one that suits his own temperament (§28) have been expounded in detail in all their aspects.',
 		],
 	},
-];
+]

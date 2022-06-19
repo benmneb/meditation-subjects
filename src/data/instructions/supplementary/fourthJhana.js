@@ -84,4 +84,4 @@ export const fourthJhana = [
 			'This, in the first place, is according to the fourfold reckoning of jhāna.',
 		],
 	},
-];
+]

@@ -12,4 +12,4 @@ export const fiveKindsOfDirectKnowledge = [
 			1: 'Āneñja—“imperturbability”: a term normally used for the four immaterial states, together with the fourth jhāna. See also §16f., and MN 106.',
 		},
 	},
-];
+]

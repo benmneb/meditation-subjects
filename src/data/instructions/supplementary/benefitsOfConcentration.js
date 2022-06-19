@@ -40,4 +40,4 @@ export const benefitsOfConcentration = [
 			46: 'Sūdana—“cleaning”: not in PED. See title of Majjhima Nikāya Commentary. Another reading here is sodhana.',
 		},
 	},
-];
+]

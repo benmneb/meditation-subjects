@@ -171,4 +171,4 @@ export const thirdJhana = [
 			'But there is this difference: blissful (pleasant) feeling is not a condition, as repetition condition, for neither-painful-nor-pleasant feeling, and [the preliminary work] must be aroused in the case of the fourth jhāna with neither- painful-nor-pleasant feeling; consequently these [consciousnesses of the preliminary work] are associated with neither-painful-nor-pleasant feeling, and here happiness vanishes simply owing to their association with equanimity.',
 		],
 	},
-];
+]

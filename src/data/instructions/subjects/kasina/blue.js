@@ -17,4 +17,4 @@ export const blue = [
 			'And here too any fault in the kasiṇa is evident in the learning sign; the stamens and stalks and the gaps between the petals, etc., are apparent. The counterpart sign appears like a crystal fan in space, free from the kasiṇa disk. The rest should be understood as already described.',
 		],
 	},
-];
+]

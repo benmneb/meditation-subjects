@@ -161,4 +161,4 @@ export const divineEye = [
 			'The explanation of knowledge of passing away and reappearance is ended.',
 		],
 	},
-];
+]

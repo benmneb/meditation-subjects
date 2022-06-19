@@ -37,4 +37,4 @@ export const absorptionInTheCognitiveSeries = [
 			22: '“‘The normal extent does not apply’ here ‘in the seven instances’ because of the immeasurability of the conscious moment in some, and the extreme brevity of the moment in others; for ‘extent’ is inapplicable here in the sense of complete cognitive series, which is why ‘in fruition next to the path,’ etc., is said” (Vism mhṭ 136).',
 		},
 	},
-];
+]

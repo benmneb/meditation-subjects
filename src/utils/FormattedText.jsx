@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment } from 'react'
 
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core'
 
-import reactStringReplace from 'react-string-replace';
+import reactStringReplace from 'react-string-replace'
 
-import { Footnote } from '../utils';
+import { Footnote } from '../utils'
 
 export default function FormattedText({ data, ...props }) {
 	return data?.map((paragraph) =>
@@ -43,5 +43,5 @@ export default function FormattedText({ data, ...props }) {
 				</Typography>
 			)
 		)
-	);
+	)
 }

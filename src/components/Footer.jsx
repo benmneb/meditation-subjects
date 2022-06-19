@@ -1,12 +1,12 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Tooltip, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { Box, Tooltip, Typography } from '@material-ui/core'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
 
-import { Link } from '../utils';
-import { resetFilters } from '../store';
+import { Link } from '../utils'
+import { resetFilters } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
@@ -41,26 +41,26 @@ const useStyles = makeStyles((theme) => ({
 			animationTimingFunction: theme.transitions.easing.easeIn,
 		},
 	},
-}));
+}))
 
 export default function Footer() {
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
 	const totalVisibleSubjects = useSelector(
 		(state) => state.totalVisibleSubjects
-	);
+	)
 
 	function handleSuttaClick() {
 		return window.open(
 			`https://suttacentral.net/an5.73/en/sujato?ref=${window.location.host}`,
 			'_blank',
 			'noopener'
-		);
+		)
 	}
 
 	function handleResetFilters() {
-		dispatch(resetFilters());
+		dispatch(resetFilters())
 	}
 
 	return (
@@ -108,5 +108,5 @@ export default function Footer() {
 				</Box>
 			</Tooltip>
 		</Box>
-	);
+	)
 }

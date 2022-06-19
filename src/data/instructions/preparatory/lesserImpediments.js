@@ -9,4 +9,4 @@ export const lesserImpediments = [
 			'Now, with the clause, And not overlook any of the directions for development (III.28), the time has come for the detailed exposition of all meditation subjects.',
 		],
 	},
-];
+]

@@ -1,8 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 
-import { showFootnote, activeFootnote } from '../store';
+import { showFootnote, activeFootnote } from '../store'
 
 const useStyles = makeStyles((theme) => ({
 	footnote: {
@@ -15,20 +15,20 @@ const useStyles = makeStyles((theme) => ({
 			boxShadow: `inset 0 -1.15rem 0 ${theme.palette.primary.main}`,
 		},
 	},
-}));
+}))
 
 export default function Footnote({ children, data }) {
-	const styles = useStyles();
-	const dispatch = useDispatch();
+	const styles = useStyles()
+	const dispatch = useDispatch()
 
 	function handleClick() {
-		dispatch(showFootnote(true));
-		dispatch(activeFootnote(data));
+		dispatch(showFootnote(true))
+		dispatch(activeFootnote(data))
 	}
 
 	return (
 		<sup className={styles.footnote} onClick={handleClick}>
 			{children}
 		</sup>
-	);
+	)
 }

@@ -38,4 +38,4 @@ export const earth = [
 			'So, having thus made it delimited and of the size prescribed, he should scrape it down with a stone trowel—a wooden trowel turns it a bad colour, so that should not be employed—and make it as even as the surface of a drum. Then he should sweep the place out and have a bath. On his return he should seat himself on a well-covered chair with legs a span and four fingers high, prepared in a place that is two and a half cubits [that is, two and a half times elbow to finger-tip] from the kasiṇa disk. For the kasiṇa does not appear plainly to him if he sits further off than that; and if he sits nearer than that, faults in the kasiṇa appear. If he sits higher up, he has to look at it with his neck bent; and if he sits lower down, his knees ache.',
 		],
 	},
-];
+]

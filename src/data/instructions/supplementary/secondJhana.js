@@ -78,4 +78,4 @@ export const secondJhana = [
 			'When he has emerged from the second jhāna [159] happiness appears gross to him as he reviews the jhāna factors with mindfulness and full awareness, while bliss and unification appear peaceful. Then as he brings that same sign to mind as “earth, earth” again and again with the purpose of abandoning the gross factor and obtaining the peaceful factors, [knowing] “now the third jhāna will arise,” there arises in him mind-door adverting with that same earth kasiṇa as its object, interrupting the life-continuum. After that, either four or five impulsions impel on that same object, the last one of which is an impulsion of the fine-material sphere belonging to the third jhāna. The rest are of the kinds already stated (§74).',
 		],
 	},
-];
+]

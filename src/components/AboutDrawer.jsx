@@ -1,26 +1,26 @@
-import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Box, SwipeableDrawer, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import { Link } from '../utils/';
-import { toggleAboutDrawer } from '../store';
+import { Link } from '../utils/'
+import { toggleAboutDrawer } from '../store'
 
 const useStyles = makeStyles({
 	drawerPaper: {
 		width: 290,
 		maxWidth: '80vw',
 	},
-});
+})
 
 export default function AboutDrawer() {
-	const styles = useStyles();
-	const dispatch = useDispatch();
-	const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
+	const styles = useStyles()
+	const dispatch = useDispatch()
+	const showAboutDrawer = useSelector((state) => state.showAboutDrawer)
 
 	function handleToggleAboutDrawer() {
-		dispatch(toggleAboutDrawer(!showAboutDrawer));
+		dispatch(toggleAboutDrawer(!showAboutDrawer))
 	}
 
 	return (
@@ -85,5 +85,5 @@ export default function AboutDrawer() {
 				</Typography>
 			</Box>
 		</SwipeableDrawer>
-	);
+	)
 }

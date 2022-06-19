@@ -91,4 +91,4 @@ export const general = [
 			'And this does not apply only to kasiṇas; for none of them will succeed in developing any meditation subject at all. So the task of devotion to a meditation subject must be undertaken by a clansman who has no hindrance by kamma- result, who shuns hindrance by kamma and by defilement, and who fosters faith, zeal and understanding by listening to the Dhamma, frequenting good men, and so on.',
 		],
 	},
-];
+]

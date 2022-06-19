@@ -9,4 +9,4 @@ export const counterpartSign = [
 			12: '“If ‘it is not like that’—is not possessed of colour, etc.—then how is it the object of jhāna? It is in order to answer that question that the sentence beginning, ‘For it is …’ is given. ‘Born of the perception’: produced by the perception during development, simply born from the perception during development. Since there is no arising from anywhere of what has no individual essence, he therefore said, ‘Being the mere mode of appearance’” (Vism-mhṭ 122). See Ch. VIII, n. 11.',
 		},
 	},
-];
+]

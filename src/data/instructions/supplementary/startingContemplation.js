@@ -32,4 +32,4 @@ export const startingContemplation = [
 			9: '‘Comes into focus’: becomes the resort of mind-door impulsion” (Vism-mhṭ 122).',
 		},
 	},
-];
+]

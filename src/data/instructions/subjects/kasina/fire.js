@@ -19,4 +19,4 @@ export const fire = [
 			'As he develops it in this way the two signs eventually arise in him as already described. Herein, the learning sign appears like [the fire to keep] sinking down as the flame keeps detaching itself. [172] But when someone apprehends it in a kasiṇa that is not made up, any fault in the kasiṇa is evident [in the learning sign], and any firebrand, or pile of embers or ashes, or smoke appears in it. The counterpart sign appears motionless like a piece of red cloth set in space, like a gold fan, like a gold column. With its appearance he reaches access jhāna and the jhāna tetrad and pentad in the way already described.',
 		],
 	},
-];
+]

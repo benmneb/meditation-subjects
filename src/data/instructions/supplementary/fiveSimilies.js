@@ -44,4 +44,4 @@ export const fiveSimilies = [
 		],
 		isBlockquote: 73.1,
 	},
-];
+]

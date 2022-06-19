@@ -64,4 +64,4 @@ export const guardingTheSign = [
 			'So he should avoid the seven unsuitable kinds and cultivate the suitable. For when he practices in this way, assiduously cultivating the sign, then, “he need not wait too long until absorption shall his wish fulfil.',
 		],
 	},
-];
+]

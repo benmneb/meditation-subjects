@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Hidden, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { Box, Hidden, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -32,25 +32,25 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		zIndex: 1,
 	},
-}));
+}))
 
 export default function Hero() {
-	const styles = useStyles();
+	const styles = useStyles()
 
-	const [offset, setOffset] = useState(0);
+	const [offset, setOffset] = useState(0)
 
 	// enlarge nimitta on scroll
 	useEffect(() => {
 		function handleScroll() {
-			setOffset(window.pageYOffset);
+			setOffset(window.pageYOffset)
 		}
 
-		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleScroll)
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [offset]);
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [offset])
 
 	return (
 		<Box component="section" className={styles.header}>
@@ -69,5 +69,5 @@ export default function Hero() {
 				</Hidden>
 			</Box>
 		</Box>
-	);
+	)
 }

@@ -1,5 +1,5 @@
-import * as colors from '@material-ui/core/colors';
-import * as instructions from './instructions';
+import * as colors from '@material-ui/core/colors'
+import * as instructions from './instructions'
 
 export const subjects = [
 	{
@@ -762,4 +762,4 @@ export const subjects = [
 		},
 		color: colors.orange[800],
 	},
-];
+]

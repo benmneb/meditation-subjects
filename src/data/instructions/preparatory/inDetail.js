@@ -1,10 +1,10 @@
-import { apprehendFromAmong } from './apprehendFromAmong';
-import { avoidAMonastery } from './avoidAMonastery';
-import { fiveFactorsOfRestingPlace } from './fiveFactorsOfRestingPlace';
-import { goodFriend } from './goodFriend';
-import { lesserImpediments } from './lesserImpediments';
-import { suitsTemperament } from './suitsTemperament';
-import { tenImpediments } from './tenImpediments';
+import { apprehendFromAmong } from './apprehendFromAmong'
+import { avoidAMonastery } from './avoidAMonastery'
+import { fiveFactorsOfRestingPlace } from './fiveFactorsOfRestingPlace'
+import { goodFriend } from './goodFriend'
+import { lesserImpediments } from './lesserImpediments'
+import { suitsTemperament } from './suitsTemperament'
+import { tenImpediments } from './tenImpediments'
 
 export const inDetail = [
 	{
@@ -32,4 +32,4 @@ export const inDetail = [
 		text: 'Sever the Lesser Impediments',
 		data: lesserImpediments,
 	},
-];
+]

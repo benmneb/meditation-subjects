@@ -164,4 +164,4 @@ As the bee and the rest suggest.`,
 			17: 'Buddha—“possessed of wit”: not in PED; see M-a I 39.',
 		},
 	},
-];
+]

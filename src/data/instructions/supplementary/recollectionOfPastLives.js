@@ -329,4 +329,4 @@ export const recollectionOfPastLives = [
 			'The explanation of the knowledge of recollection of past lives is ended.',
 		],
 	},
-];
+]

@@ -29,11 +29,15 @@
 		"workbox-strategies": "^5.1.4",
 		"workbox-streams": "^5.1.4"
 	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"pretty": "prettier --write \"./**/*.{js,jsx}\""
 	},
 	"eslintConfig": {
 		"extends": [

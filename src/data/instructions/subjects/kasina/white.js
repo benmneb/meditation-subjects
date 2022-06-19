@@ -9,4 +9,4 @@ export const white = [
 			'Anyone else should make a kasiṇa, in the way already described for the blue kasiṇa, with the white flowers already mentioned, or with cloth or colour element. He should bring it to mind as “white, white.” The rest is as before.',
 		],
 	},
-];
+]

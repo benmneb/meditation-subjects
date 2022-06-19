@@ -26,4 +26,4 @@ export const fivefoldReckoningOfJhana = [
 			'“So that which is the second in the fourfold reckoning becomes the second and third in the fivefold reckoning by being divided into two. And those which are the third and fourth in the former reckoning become the fourth and fifth in this reckoning. The first remains the first in each case.',
 		],
 	},
-];
+]

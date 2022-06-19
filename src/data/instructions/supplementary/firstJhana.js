@@ -287,4 +287,4 @@ export const firstJhana = [
 			'So if he wants to remain long in the jhāna, he must enter upon it after [first] purifying his mind from obstructive states.',
 		],
 	},
-];
+]

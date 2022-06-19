@@ -115,4 +115,4 @@ As any footpad-hunted road.`,
 		],
 		isBlockquote: 19.2,
 	},
-];
+]

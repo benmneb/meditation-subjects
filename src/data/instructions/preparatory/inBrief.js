@@ -7,4 +7,4 @@ export const inBrief = [
 	{
 		29: ['The detail is this:'],
 	},
-];
+]

@@ -18,4 +18,4 @@ export const water = [
 			'As he develops it in this way, the two signs eventually arise in him in the way already described. Here, however, the learning sign has the appearance of moving. [171] If the water has bubbles of froth mixed with it, the learning sign has the same appearance, and it is evident as a fault in the kasiṇa. But the counterpart sign appears inactive, like a crystal fan set in space, like the disk of a looking- glass made of crystal. With the appearance of that sign he reaches access jhāna and the jhāna tetrad and pentad in the way already described.',
 		],
 	},
-];
+]
