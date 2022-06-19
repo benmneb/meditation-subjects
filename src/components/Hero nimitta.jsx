@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		position: 'relative',
 		overflow: 'hidden',
+		backgroundColor: theme.palette.background.paper,
 	},
 	kasina: {
 		position: 'absolute',
