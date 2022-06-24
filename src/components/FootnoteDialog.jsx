@@ -45,8 +45,10 @@ export default function FootnoteDialog() {
 			open={isFootnoteShown}
 			aria-labelledby="footnote-dialog-title"
 			PaperComponent={PaperComponent}
-			onBackdropClick={handleClose}
-			onExited={handleExited}
+			onClose={handleClose}
+			TransitionProps={{
+				onExited: handleExited,
+			}}
 		>
 			<DialogTitle style={{ cursor: 'move' }} id="footnote-dialog-title">
 				Footnote #{footnote?.number}

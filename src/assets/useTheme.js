@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 import { useMediaQuery } from '@material-ui/core'
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
 export function useTheme() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -9,7 +9,7 @@ export function useTheme() {
 	const theme = useMemo(
 		() =>
 			responsiveFontSizes(
-				createMuiTheme({
+				createTheme({
 					palette: {
 						type: prefersDarkMode ? 'dark' : 'light',
 						primary: { main: '#FF9933' },
