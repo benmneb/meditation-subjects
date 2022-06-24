@@ -13,9 +13,9 @@ import {
 	FilterListRounded,
 	CloseRounded,
 } from '@mui/icons-material'
-import { alpha } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -64,7 +64,7 @@ export default function TopBar() {
 	}
 
 	return (
-        <AppBar
+		<AppBar
 			position="sticky"
 			color="inherit"
 			className={clsx(styles.appBar, {
@@ -74,11 +74,12 @@ export default function TopBar() {
 			<Toolbar>
 				<Tooltip title="About this site" placement="right">
 					<IconButton
-                        edge="start"
-                        color="inherit"
-                        aria-label="about"
-                        onClick={handleShowAboutDrawer}
-                        size="large">
+						edge="start"
+						color="inherit"
+						aria-label="about"
+						onClick={handleShowAboutDrawer}
+						size="large"
+					>
 						<InfoOutlined />
 					</IconButton>
 				</Tooltip>
@@ -90,11 +91,12 @@ export default function TopBar() {
 					placement="left"
 				>
 					<IconButton
-                        edge="end"
-                        color="inherit"
-                        aria-label="filters"
-                        onClick={handleToggleFilters}
-                        size="large">
+						edge="end"
+						color="inherit"
+						aria-label="filters"
+						onClick={handleToggleFilters}
+						size="large"
+					>
 						{!smDown && showFilters ? <CloseRounded /> : <FilterListRounded />}
 					</IconButton>
 				</Tooltip>
@@ -105,5 +107,5 @@ export default function TopBar() {
 				</Toolbar>
 			</Hidden>
 		</AppBar>
-    );
+	)
 }

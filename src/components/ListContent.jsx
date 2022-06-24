@@ -1,5 +1,5 @@
 import { Collapse } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector } from 'react-redux'
 

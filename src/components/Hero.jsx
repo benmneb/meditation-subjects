@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { Box, Fade, Hidden, Typography } from '@mui/material'
 
 import heroImg from '../assets/hero.jpg'
@@ -73,7 +73,7 @@ export default function Hero(props) {
 	}
 
 	return (
-        <Box component="section" className={styles.header}>
+		<Box component="section" className={styles.header}>
 			<Fade in={!imageLoading} timeout={fadeInDuration}>
 				<img
 					src={heroImg}
@@ -104,5 +104,5 @@ export default function Hero(props) {
 			</Box>
 			<Box className={styles.overlay} />
 		</Box>
-    );
+	)
 }

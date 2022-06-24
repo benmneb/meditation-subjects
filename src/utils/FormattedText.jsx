@@ -43,5 +43,5 @@ export default function FormattedText({ data, ...props }) {
 				</Typography>
 			)
 		)
-	);
+	)
 }

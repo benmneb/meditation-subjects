@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { Box, Hidden, Typography } from '@mui/material'
 
 const useStyles = makeStyles((theme) => ({
@@ -88,7 +88,7 @@ export default function Hero(props) {
 	}, [offset])
 
 	return (
-        <Box component="section" className={styles.header}>
+		<Box component="section" className={styles.header}>
 			<Box
 				className={clsx(styles.image, { [styles.opacityZero]: !imageLoaded })}
 			/>
@@ -111,5 +111,5 @@ export default function Hero(props) {
 			</Box>
 			<Box className={styles.overlay} />
 		</Box>
-    );
+	)
 }

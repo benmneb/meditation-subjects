@@ -41,7 +41,7 @@ export default function FootnoteDialog() {
 	}
 
 	return (
-        <Dialog
+		<Dialog
 			open={isFootnoteShown}
 			aria-labelledby="footnote-dialog-title"
 			PaperComponent={PaperComponent}
@@ -57,10 +57,8 @@ export default function FootnoteDialog() {
 				<DialogContentText>{footnote?.content}</DialogContentText>
 			</DialogContent>
 			<DialogActions>
-				<Button onClick={handleClose}>
-					Close
-				</Button>
+				<Button onClick={handleClose}>Close</Button>
 			</DialogActions>
 		</Dialog>
-    );
+	)
 }

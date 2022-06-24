@@ -1,5 +1,5 @@
 import { Box, SwipeableDrawer, Typography } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'

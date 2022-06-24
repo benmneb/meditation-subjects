@@ -1,5 +1,5 @@
 import { SwipeableDrawer, useMediaQuery } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector, useDispatch } from 'react-redux'
 

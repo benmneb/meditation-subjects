@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { Box, Tooltip, Typography } from '@mui/material'
 
 import { useSelector, useDispatch } from 'react-redux'

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { useMediaQuery, adaptV4Theme } from '@mui/material';
+import { useMediaQuery, adaptV4Theme } from '@mui/material'
 import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
 export function useTheme() {
@@ -9,36 +9,38 @@ export function useTheme() {
 	const theme = useMemo(
 		() =>
 			responsiveFontSizes(
-				createTheme(adaptV4Theme({
-					palette: {
-						mode: prefersDarkMode ? 'dark' : 'light',
-						primary: { main: '#FF9933' },
-						secondary: { main: '#3399FF' },
-					},
-					typography: {
-						fontFamily: ['Inter', 'sans-serif'].join(','),
-						button: {
-							textTransform: 'none',
+				createTheme(
+					adaptV4Theme({
+						palette: {
+							mode: prefersDarkMode ? 'dark' : 'light',
+							primary: { main: '#FF9933' },
+							secondary: { main: '#3399FF' },
 						},
-					},
-					shape: {
-						borderRadius: 16,
-					},
-					mixins: {
-						appbar: {
-							height: 56,
-							'@media (min-width:0px) and (orientation: landscape)': {
-								height: 48,
-							},
-							'@media (min-width:600px)': {
-								height: 64,
+						typography: {
+							fontFamily: ['Inter', 'sans-serif'].join(','),
+							button: {
+								textTransform: 'none',
 							},
 						},
-						subjectDrawerContents: {
-							maxWidth: 600,
+						shape: {
+							borderRadius: 16,
 						},
-					},
-				}))
+						mixins: {
+							appbar: {
+								height: 56,
+								'@media (min-width:0px) and (orientation: landscape)': {
+									height: 48,
+								},
+								'@media (min-width:600px)': {
+									height: 64,
+								},
+							},
+							subjectDrawerContents: {
+								maxWidth: 600,
+							},
+						},
+					})
+				)
 			),
 		[prefersDarkMode]
 	)

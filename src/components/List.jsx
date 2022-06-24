@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { Box } from '@mui/material'
 
 import { useSelector, useDispatch } from 'react-redux'

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from '@mui/styles/makeStyles'
 import { Box, Hidden, Typography } from '@mui/material'
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +53,7 @@ export default function Hero() {
 	}, [offset])
 
 	return (
-        <Box component="section" className={styles.header}>
+		<Box component="section" className={styles.header}>
 			<Box
 				className={styles.kasina}
 				style={{ width: offset + 500, height: offset + 500 }}
@@ -69,5 +69,5 @@ export default function Hero() {
 				</Hidden>
 			</Box>
 		</Box>
-    );
+	)
 }
