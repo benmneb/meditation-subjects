@@ -1,5 +1,5 @@
-import { Collapse } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Collapse } from '@mui/material'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector } from 'react-redux'
 

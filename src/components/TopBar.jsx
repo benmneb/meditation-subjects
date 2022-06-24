@@ -7,13 +7,15 @@ import {
 	Tooltip,
 	Typography,
 	useMediaQuery,
-} from '@material-ui/core'
+} from '@mui/material'
 import {
 	InfoOutlined,
 	FilterListRounded,
 	CloseRounded,
-} from '@material-ui/icons'
-import { makeStyles, alpha } from '@material-ui/core/styles'
+} from '@mui/icons-material'
+import { alpha } from '@mui/material/styles';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -52,7 +54,7 @@ export default function TopBar() {
 	const totalVisibleSubjects = useSelector(
 		(state) => state.totalVisibleSubjects
 	)
-	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+	const smDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
 	function handleShowAboutDrawer() {
 		dispatch(toggleAboutDrawer(!showAboutDrawer))
@@ -62,7 +64,7 @@ export default function TopBar() {
 	}
 
 	return (
-		<AppBar
+        <AppBar
 			position="sticky"
 			color="inherit"
 			className={clsx(styles.appBar, {
@@ -72,11 +74,11 @@ export default function TopBar() {
 			<Toolbar>
 				<Tooltip title="About this site" placement="right">
 					<IconButton
-						edge="start"
-						color="inherit"
-						aria-label="about"
-						onClick={handleShowAboutDrawer}
-					>
+                        edge="start"
+                        color="inherit"
+                        aria-label="about"
+                        onClick={handleShowAboutDrawer}
+                        size="large">
 						<InfoOutlined />
 					</IconButton>
 				</Tooltip>
@@ -88,20 +90,20 @@ export default function TopBar() {
 					placement="left"
 				>
 					<IconButton
-						edge="end"
-						color="inherit"
-						aria-label="filters"
-						onClick={handleToggleFilters}
-					>
+                        edge="end"
+                        color="inherit"
+                        aria-label="filters"
+                        onClick={handleToggleFilters}
+                        size="large">
 						{!smDown && showFilters ? <CloseRounded /> : <FilterListRounded />}
 					</IconButton>
 				</Tooltip>
 			</Toolbar>
-			<Hidden smDown>
+			<Hidden mdDown>
 				<Toolbar className={styles.filters}>
 					<Filters smDown={smDown} />
 				</Toolbar>
 			</Hidden>
 		</AppBar>
-	)
+    );
 }

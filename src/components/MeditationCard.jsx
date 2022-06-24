@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import {
 	Button,
 	Card,
@@ -6,7 +6,7 @@ import {
 	CardContent,
 	CardHeader,
 	Typography,
-} from '@material-ui/core'
+} from '@mui/material'
 
 import { useDispatch } from 'react-redux'
 

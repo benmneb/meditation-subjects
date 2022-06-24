@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-import { makeStyles } from '@material-ui/core/styles'
-import { Box, Hidden, Typography } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
+import { Box, Hidden, Typography } from '@mui/material'
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -53,7 +53,7 @@ export default function Hero() {
 	}, [offset])
 
 	return (
-		<Box component="section" className={styles.header}>
+        <Box component="section" className={styles.header}>
 			<Box
 				className={styles.kasina}
 				style={{ width: offset + 500, height: offset + 500 }}
@@ -62,12 +62,12 @@ export default function Hero() {
 				<Typography component="h1" variant="h2">
 					The Buddha's 40 Meditation Subjects
 				</Typography>
-				<Hidden xsDown>
+				<Hidden smDown>
 					<Typography component="h2" variant="h4">
 						as taught in the Visuddhimagga
 					</Typography>
 				</Hidden>
 			</Box>
 		</Box>
-	)
+    );
 }

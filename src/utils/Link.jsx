@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
 	link: {
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		transition: `all ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
 		'&:hover': {
 			color:
-				theme.palette.type === 'dark'
+				theme.palette.mode === 'dark'
 					? theme.palette.primary.contrastText
 					: theme.palette.text.primary,
 			boxShadow: `inset 0 -1.15rem 0 ${theme.palette.primary.main}`,

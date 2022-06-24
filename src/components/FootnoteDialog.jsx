@@ -7,7 +7,7 @@ import {
 	DialogContentText,
 	DialogTitle,
 	Paper,
-} from '@material-ui/core'
+} from '@mui/material'
 
 import Draggable from 'react-draggable'
 
@@ -41,7 +41,7 @@ export default function FootnoteDialog() {
 	}
 
 	return (
-		<Dialog
+        <Dialog
 			open={isFootnoteShown}
 			aria-labelledby="footnote-dialog-title"
 			PaperComponent={PaperComponent}
@@ -57,10 +57,10 @@ export default function FootnoteDialog() {
 				<DialogContentText>{footnote?.content}</DialogContentText>
 			</DialogContent>
 			<DialogActions>
-				<Button onClick={handleClose} color="default">
+				<Button onClick={handleClose}>
 					Close
 				</Button>
 			</DialogActions>
 		</Dialog>
-	)
+    );
 }

@@ -1,5 +1,5 @@
-import { SwipeableDrawer, useMediaQuery } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { SwipeableDrawer, useMediaQuery } from '@mui/material'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -17,7 +17,7 @@ export default function FiltersDrawer() {
 	const styles = useStyles()
 	const dispatch = useDispatch()
 
-	const smDown = useMediaQuery((theme) => theme.breakpoints.down('sm'))
+	const smDown = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
 	const showFilters = useSelector((state) => state.showFilters)
 

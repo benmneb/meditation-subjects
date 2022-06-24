@@ -8,8 +8,8 @@ import {
 	MenuItem,
 	OutlinedInput,
 	Select,
-} from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+} from '@mui/material'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector } from 'react-redux'
 
@@ -37,7 +37,7 @@ function styled(camelCase) {
 		.replace(/^./, (match) => match.toUpperCase())
 		.trim()
 		.replace(/s$/, '(s)')
-		.replace(/for$/, 'for...')
+		.replace(/for$/, 'for...');
 }
 
 export default function FiltersSelect(props) {

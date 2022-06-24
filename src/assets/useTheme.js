@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
-import { useMediaQuery } from '@material-ui/core'
-import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
+import { useMediaQuery, adaptV4Theme } from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
 export function useTheme() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -9,9 +9,9 @@ export function useTheme() {
 	const theme = useMemo(
 		() =>
 			responsiveFontSizes(
-				createTheme({
+				createTheme(adaptV4Theme({
 					palette: {
-						type: prefersDarkMode ? 'dark' : 'light',
+						mode: prefersDarkMode ? 'dark' : 'light',
 						primary: { main: '#FF9933' },
 						secondary: { main: '#3399FF' },
 					},
@@ -38,7 +38,7 @@ export function useTheme() {
 							maxWidth: 600,
 						},
 					},
-				})
+				}))
 			),
 		[prefersDarkMode]
 	)

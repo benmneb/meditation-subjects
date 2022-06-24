@@ -1,5 +1,5 @@
-import { CssBaseline } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 import { useTheme } from './assets'
 import {
@@ -19,16 +19,18 @@ export default function App() {
 	const theme = useTheme()
 
 	return (
-		<ThemeProvider theme={theme}>
-			<CssBaseline />
-			<Hero imageSrc={heroImg} />
-			<TopBar />
-			<AboutDrawer />
-			<FiltersDrawer />
-			<List />
-			<Footer />
-			<SubjectDrawer />
-			<FootnoteDialog />
-		</ThemeProvider>
-	)
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Hero imageSrc={heroImg} />
+                <TopBar />
+                <AboutDrawer />
+                <FiltersDrawer />
+                <List />
+                <Footer />
+                <SubjectDrawer />
+                <FootnoteDialog />
+            </ThemeProvider>
+        </StyledEngineProvider>
+    );
 }

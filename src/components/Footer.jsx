@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
-import { makeStyles } from '@material-ui/core/styles'
-import { Box, Tooltip, Typography } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
+import { Box, Tooltip, Typography } from '@mui/material'
 
 import { useSelector, useDispatch } from 'react-redux'
 

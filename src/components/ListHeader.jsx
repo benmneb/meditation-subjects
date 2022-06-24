@@ -1,6 +1,6 @@
-import { Box, ListItem, ListItemText } from '@material-ui/core'
-import { ExpandLessRounded, ExpandMoreRounded } from '@material-ui/icons'
-import { makeStyles } from '@material-ui/core/styles'
+import { Box, ListItem, ListItemText } from '@mui/material'
+import { ExpandLessRounded, ExpandMoreRounded } from '@mui/icons-material'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector, useDispatch } from 'react-redux'
 

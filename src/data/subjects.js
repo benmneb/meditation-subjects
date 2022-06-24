@@ -1,4 +1,4 @@
-import * as colors from '@material-ui/core/colors'
+import * as colors from '@mui/material/colors'
 import * as instructions from './instructions'
 
 export const subjects = [

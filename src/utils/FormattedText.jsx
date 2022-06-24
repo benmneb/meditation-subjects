@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography } from '@mui/material'
 
 import reactStringReplace from 'react-string-replace'
 
@@ -43,5 +43,5 @@ export default function FormattedText({ data, ...props }) {
 				</Typography>
 			)
 		)
-	)
+	);
 }

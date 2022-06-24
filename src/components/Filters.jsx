@@ -1,6 +1,8 @@
-import { Box, Button, Fade, Typography } from '@material-ui/core'
-import { RotateLeftRounded } from '@material-ui/icons'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { Box, Button, Fade, Typography } from '@mui/material'
+import { RotateLeftRounded } from '@mui/icons-material'
+import { useTheme } from '@mui/material/styles';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector, useDispatch } from 'react-redux'
 

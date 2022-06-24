@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 
-import { makeStyles } from '@material-ui/core/styles'
-import { Box, Hidden, Typography } from '@material-ui/core'
+import makeStyles from '@mui/styles/makeStyles';
+import { Box, Hidden, Typography } from '@mui/material'
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -88,7 +88,7 @@ export default function Hero(props) {
 	}, [offset])
 
 	return (
-		<Box component="section" className={styles.header}>
+        <Box component="section" className={styles.header}>
 			<Box
 				className={clsx(styles.image, { [styles.opacityZero]: !imageLoaded })}
 			/>
@@ -103,7 +103,7 @@ export default function Hero(props) {
 				<Typography component="h1" variant="h2" gutterBottom>
 					The Buddha's 40 Meditation Subjects
 				</Typography>
-				<Hidden xsDown>
+				<Hidden smDown>
 					<Typography component="h2" variant="h4">
 						as taught in the Visuddhimagga
 					</Typography>
@@ -111,5 +111,5 @@ export default function Hero(props) {
 			</Box>
 			<Box className={styles.overlay} />
 		</Box>
-	)
+    );
 }

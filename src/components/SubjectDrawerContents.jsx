@@ -12,13 +12,13 @@ import {
 	Typography,
 	IconButton,
 	Tooltip,
-} from '@material-ui/core'
+} from '@mui/material'
 import {
 	CloseRounded,
 	ExpandLessRounded,
 	ExpandMoreRounded,
-} from '@material-ui/icons'
-import { makeStyles } from '@material-ui/core/styles'
+} from '@mui/icons-material'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -102,115 +102,113 @@ export default function SubjectDrawerContents(props) {
 		dispatch(resetSubjectDrawerState())
 	}
 
-	return (
-		<>
-			<AppBar position="fixed" className={styles.appBar}>
-				<Toolbar disableGutters className={styles.toolbar}>
-					<Typography variant="h4" component="h1" className={styles.title}>
-						{subject?.longName}
-						<Box component="span" fontStyle="italic">
-							<Typography variant="body1">
-								in {subject?.classification}
-							</Typography>
-						</Box>
-					</Typography>
-					<Tooltip title="Close" placement="left">
-						<IconButton color="inherit" autoFocus onClick={handleCloseDrawer}>
-							<CloseRounded />
-						</IconButton>
-					</Tooltip>
-				</Toolbar>
-			</AppBar>
-			<Box minHeight={120} />
-			<List component="section">
-				<ListHeader
-					number={1}
-					primary="Preparatory Instructions"
-					secondary="Applicable to all meditation subjects"
-				/>
-				<ListContent number={1}>
-					<FormattedText data={preparatory.inBrief} />
-					<List>
-						{preparatory.inDetail.map((subChap) => (
-							<Fragment key={subChap.text}>
-								<ListItem
-									button
-									onClick={() =>
-										dispatch(toggleExpandPrepDetails(subChap.text))
-									}
-									classes={{ root: styles.buttonBaseRoot }}
-								>
-									<ListItemText
-										primary={subChap.text}
-										primaryTypographyProps={{
-											component: 'h3',
-											variant: 'body1',
-										}}
-									/>
-									{openPrepDetails.includes(subChap.text) ? (
-										<ExpandLessRounded />
-									) : (
-										<ExpandMoreRounded />
-									)}
-								</ListItem>
-								<Collapse in={openPrepDetails.includes(subChap.text)}>
-									<Box padding={2}>
-										<FormattedText data={subChap.data} color="textSecondary" />
-									</Box>
-								</Collapse>
-							</Fragment>
-						))}
-					</List>
-				</ListContent>
-				<Divider />
-				<ListHeader
-					number={2}
-					primary={`Instructions for ${subject?.longName}`}
-					secondary="Specific to this meditation subject only"
-				/>
-				<ListContent number={2}>
-					{subject && <FormattedText data={subject.instructions} />}
-				</ListContent>
-				<Divider />
-				<ListHeader
-					number={3}
-					primary="Supplementary Instructions"
-					secondary="Applicable to all meditation subjects"
-				/>
-				<ListContent number={3}>
-					<List>
-						{supplementary.organisedData.map((chapter) => (
-							<Fragment key={chapter.text}>
-								<ListItem
-									button
-									onClick={() =>
-										dispatch(toggleExpandSuppDetails(chapter.text))
-									}
-									classes={{ root: styles.buttonBaseRoot }}
-								>
-									<ListItemText
-										primary={chapter.text}
-										primaryTypographyProps={{
-											component: 'h3',
-											variant: 'body1',
-										}}
-									/>
-									{openSuppDetails.includes(chapter.text) ? (
-										<ExpandLessRounded />
-									) : (
-										<ExpandMoreRounded />
-									)}
-								</ListItem>
-								<Collapse in={openSuppDetails.includes(chapter.text)}>
-									<Box padding={2}>
-										<FormattedText data={chapter.data} color="textSecondary" />
-									</Box>
-								</Collapse>
-							</Fragment>
-						))}
-					</List>
-				</ListContent>
-			</List>
-		</>
-	)
+	return <>
+        <AppBar position="fixed" className={styles.appBar}>
+            <Toolbar disableGutters className={styles.toolbar}>
+                <Typography variant="h4" component="h1" className={styles.title}>
+                    {subject?.longName}
+                    <Box component="span" fontStyle="italic">
+                        <Typography variant="body1">
+                            in {subject?.classification}
+                        </Typography>
+                    </Box>
+                </Typography>
+                <Tooltip title="Close" placement="left">
+                    <IconButton color="inherit" autoFocus onClick={handleCloseDrawer} size="large">
+                        <CloseRounded />
+                    </IconButton>
+                </Tooltip>
+            </Toolbar>
+        </AppBar>
+        <Box minHeight={120} />
+        <List component="section">
+            <ListHeader
+                number={1}
+                primary="Preparatory Instructions"
+                secondary="Applicable to all meditation subjects"
+            />
+            <ListContent number={1}>
+                <FormattedText data={preparatory.inBrief} />
+                <List>
+                    {preparatory.inDetail.map((subChap) => (
+                        <Fragment key={subChap.text}>
+                            <ListItem
+                                button
+                                onClick={() =>
+                                    dispatch(toggleExpandPrepDetails(subChap.text))
+                                }
+                                classes={{ root: styles.buttonBaseRoot }}
+                            >
+                                <ListItemText
+                                    primary={subChap.text}
+                                    primaryTypographyProps={{
+                                        component: 'h3',
+                                        variant: 'body1',
+                                    }}
+                                />
+                                {openPrepDetails.includes(subChap.text) ? (
+                                    <ExpandLessRounded />
+                                ) : (
+                                    <ExpandMoreRounded />
+                                )}
+                            </ListItem>
+                            <Collapse in={openPrepDetails.includes(subChap.text)}>
+                                <Box padding={2}>
+                                    <FormattedText data={subChap.data} color="textSecondary" />
+                                </Box>
+                            </Collapse>
+                        </Fragment>
+                    ))}
+                </List>
+            </ListContent>
+            <Divider />
+            <ListHeader
+                number={2}
+                primary={`Instructions for ${subject?.longName}`}
+                secondary="Specific to this meditation subject only"
+            />
+            <ListContent number={2}>
+                {subject && <FormattedText data={subject.instructions} />}
+            </ListContent>
+            <Divider />
+            <ListHeader
+                number={3}
+                primary="Supplementary Instructions"
+                secondary="Applicable to all meditation subjects"
+            />
+            <ListContent number={3}>
+                <List>
+                    {supplementary.organisedData.map((chapter) => (
+                        <Fragment key={chapter.text}>
+                            <ListItem
+                                button
+                                onClick={() =>
+                                    dispatch(toggleExpandSuppDetails(chapter.text))
+                                }
+                                classes={{ root: styles.buttonBaseRoot }}
+                            >
+                                <ListItemText
+                                    primary={chapter.text}
+                                    primaryTypographyProps={{
+                                        component: 'h3',
+                                        variant: 'body1',
+                                    }}
+                                />
+                                {openSuppDetails.includes(chapter.text) ? (
+                                    <ExpandLessRounded />
+                                ) : (
+                                    <ExpandMoreRounded />
+                                )}
+                            </ListItem>
+                            <Collapse in={openSuppDetails.includes(chapter.text)}>
+                                <Box padding={2}>
+                                    <FormattedText data={chapter.data} color="textSecondary" />
+                                </Box>
+                            </Collapse>
+                        </Fragment>
+                    ))}
+                </List>
+            </ListContent>
+        </List>
+    </>;
 }
