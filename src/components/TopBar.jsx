@@ -13,7 +13,7 @@ import {
 	FilterListRounded,
 	CloseRounded,
 } from '@material-ui/icons'
-import { makeStyles, fade } from '@material-ui/core/styles'
+import { makeStyles, alpha } from '@material-ui/core/styles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 		transition: `height ${theme.transitions.duration.enteringScreen}ms ${theme.transitions.easing.easeInOut}`,
 		...theme.mixins.appbar,
 		clipPath: 'inset(0px 0px -10px 0px)',
-		backgroundColor: fade(theme.palette.background.paper, 0.97),
+		backgroundColor: alpha(theme.palette.background.paper, 0.97),
 	},
 	appBarWithFilters: {
 		height: 128,
