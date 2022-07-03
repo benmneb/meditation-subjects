@@ -1,10 +1,10 @@
-import makeStyles from '@mui/styles/makeStyles'
 import {
 	Button,
 	Card,
 	CardActions,
 	CardContent,
 	CardHeader,
+	styled,
 	Typography,
 } from '@mui/material'
 
@@ -12,53 +12,58 @@ import { useDispatch } from 'react-redux'
 
 import { chooseSubject, showSubjectDrawer } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	wrapper: {
-		padding: 0,
-	},
-	card: {
-		width: '100%',
-		height: 305,
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		textAlign: 'center',
-		color: (props) => theme.palette.getContrastText(props.bgColor),
-		backgroundColor: (props) => props.bgColor,
-		[theme.breakpoints.only('xs')]: {
-			height: 250,
-		},
-	},
-	header: {
-		color: (props) => theme.palette.getContrastText(props.bgColor),
-		fontSize: 14,
-		opacity: '0.2',
-	},
-	content: {
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'space-evenly',
-		height: '100%',
-		maxHeight: 190,
-	},
-	chapter: {
-		color: (props) => theme.palette.getContrastText(props.bgColor),
-		marginBottom: 12,
-		opacity: '0.7',
-		[theme.breakpoints.only('xs')]: {
-			display: 'none',
-		},
-	},
-	actions: {
-		color: (props) => theme.palette.getContrastText(props.bgColor),
-		padding: theme.spacing(1, 1.5),
+const StyledCard = styled(Card, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	width: '100%',
+	height: 305,
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	justifyContent: 'space-between',
+	textAlign: 'center',
+	color: theme.palette.getContrastText(bgColor),
+	backgroundColor: bgColor,
+	[theme.breakpoints.only('xs')]: {
+		height: 250,
 	},
 }))
 
-export default function MeditationCard({ data, ...props }) {
-	const styles = useStyles(props)
+const StyledCardHeader = styled(CardHeader, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	color: theme.palette.getContrastText(bgColor),
+	fontSize: 14,
+	opacity: '0.2',
+}))
 
+const StyledCardContent = styled(CardContent)({
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'space-evenly',
+	height: '100%',
+	maxHeight: 190,
+})
+
+const SubTitle = styled(Typography, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	color: theme.palette.getContrastText(bgColor),
+	marginBottom: 12,
+	opacity: '0.7',
+	[theme.breakpoints.only('xs')]: {
+		display: 'none',
+	},
+}))
+
+const ActionText = styled(Typography, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	color: theme.palette.getContrastText(bgColor),
+	padding: theme.spacing(1, 1.5),
+}))
+
+export default function MeditationCard({ data, bgColor, number }) {
 	const dispatch = useDispatch()
 
 	function handleClick() {
@@ -67,27 +72,23 @@ export default function MeditationCard({ data, ...props }) {
 	}
 
 	return (
-		<Button className={styles.wrapper} onClick={handleClick}>
-			<Card className={styles.card} variant="outlined">
-				<CardHeader
-					title={props.number}
-					disableTypography
-					className={styles.header}
-				/>
-				<CardContent className={styles.content}>
+		<Button sx={{ p: 0 }} onClick={handleClick}>
+			<StyledCard variant="outlined" bgColor={bgColor}>
+				<StyledCardHeader title={number} disableTypography bgColor={bgColor} />
+				<StyledCardContent>
 					<Typography variant="h5" component="h2">
 						{data.shortName}
 					</Typography>
-					<Typography className={styles.chapter} color="textSecondary">
+					<SubTitle color="textSecondary" bgColor={bgColor}>
 						in {data?.classification}
-					</Typography>
-				</CardContent>
+					</SubTitle>
+				</StyledCardContent>
 				<CardActions>
-					<Typography variant="button" className={styles.actions}>
+					<ActionText variant="button" bgColor={bgColor}>
 						Learn More
-					</Typography>
+					</ActionText>
 				</CardActions>
-			</Card>
+			</StyledCard>
 		</Button>
 	)
 }

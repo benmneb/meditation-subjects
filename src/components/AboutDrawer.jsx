@@ -1,5 +1,4 @@
 import { Box, SwipeableDrawer, Typography } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
@@ -7,15 +6,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from '../utils/'
 import { toggleAboutDrawer } from '../store'
 
-const useStyles = makeStyles({
-	drawerPaper: {
-		width: 290,
-		maxWidth: '80vw',
-	},
-})
-
 export default function AboutDrawer() {
-	const styles = useStyles()
 	const dispatch = useDispatch()
 	const showAboutDrawer = useSelector((state) => state.showAboutDrawer)
 
@@ -25,7 +16,12 @@ export default function AboutDrawer() {
 
 	return (
 		<SwipeableDrawer
-			classes={{ paper: styles.drawerPaper }}
+			sx={{
+				'.MuiDrawer-paper': {
+					width: 290,
+					maxWidth: '80vw',
+				},
+			}}
 			anchor="left"
 			disableDiscovery
 			disableSwipeToOpen

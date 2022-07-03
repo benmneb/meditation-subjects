@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import makeStyles from '@mui/styles/makeStyles'
-import { Box } from '@mui/material'
+import { styled } from '@mui/material'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -9,21 +8,18 @@ import { subjects } from '../data'
 import { MeditationCard } from './index'
 import { setTotalVisibleSubjects } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		padding: theme.spacing(1),
-		display: 'grid',
-		gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-		gridGap: theme.spacing(1),
-		[theme.breakpoints.only('xs')]: {
-			gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-			justifyItems: 'stretch',
-		},
+const Wrapper = styled('div')(({ theme }) => ({
+	padding: theme.spacing(1),
+	display: 'grid',
+	gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+	gridGap: theme.spacing(1),
+	[theme.breakpoints.only('xs')]: {
+		gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+		justifyItems: 'stretch',
 	},
 }))
 
 export default function List() {
-	const styles = useStyles()
 	const dispatch = useDispatch()
 
 	const activeFilters = useSelector((state) => state.activeFilters)
@@ -52,7 +48,7 @@ export default function List() {
 	}, [activeFilters, dispatch, visibleSubjects.length])
 
 	return (
-		<Box className={styles.root}>
+		<Wrapper>
 			{visibleSubjects.map((subject, index) => (
 				<MeditationCard
 					number={index + 1}
@@ -61,6 +57,6 @@ export default function List() {
 					bgColor={subject.color}
 				/>
 			))}
-		</Box>
+		</Wrapper>
 	)
 }

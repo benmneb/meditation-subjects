@@ -1,7 +1,5 @@
-import clsx from 'clsx'
 import {
 	AppBar,
-	Hidden,
 	IconButton,
 	Toolbar,
 	Tooltip,
@@ -13,40 +11,23 @@ import {
 	FilterListRounded,
 	CloseRounded,
 } from '@mui/icons-material'
-import { alpha } from '@mui/material/styles'
-
-import makeStyles from '@mui/styles/makeStyles'
+import { alpha, styled } from '@mui/material/styles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
 import { Filters } from './index'
 import { toggleAboutDrawer, toggleFilters } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	appBar: {
-		top: 0,
-		marginBottom: theme.spacing(1),
-		transition: `height ${theme.transitions.duration.enteringScreen}ms ${theme.transitions.easing.easeInOut}`,
-		...theme.mixins.appbar,
-		clipPath: 'inset(0px 0px -10px 0px)',
-		backgroundColor: alpha(theme.palette.background.paper, 0.97),
-	},
-	appBarWithFilters: {
-		height: 128,
-	},
-	title: {
-		flexGrow: 1,
-		textAlign: 'center',
-	},
-	filters: {
-		display: 'flex',
-		justifyContent: 'center',
-		top: theme.spacing(-1),
-	},
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+	top: 0,
+	marginBottom: theme.spacing(1),
+	transition: `height ${theme.transitions.duration.enteringScreen}ms ${theme.transitions.easing.easeInOut}`,
+	...theme.mixins.appbar,
+	clipPath: 'inset(0px 0px -10px 0px)',
+	backgroundColor: alpha(theme.palette.background.paper, 0.97),
 }))
 
 export default function TopBar() {
-	const styles = useStyles()
 	const dispatch = useDispatch()
 
 	const showAboutDrawer = useSelector((state) => state.showAboutDrawer)
@@ -64,12 +45,17 @@ export default function TopBar() {
 	}
 
 	return (
-		<AppBar
+		<StyledAppBar
 			position="sticky"
 			color="inherit"
-			className={clsx(styles.appBar, {
-				[styles.appBarWithFilters]: !smDown && showFilters,
-			})}
+			sx={{
+				...(!smDown &&
+					showFilters && {
+						'&.MuiAppBar-root': {
+							height: 128,
+						},
+					}),
+			}}
 		>
 			<Toolbar>
 				<Tooltip title="About this site" placement="right">
@@ -83,7 +69,11 @@ export default function TopBar() {
 						<InfoOutlined />
 					</IconButton>
 				</Tooltip>
-				<Typography variant="h6" component="h1" className={styles.title}>
+				<Typography
+					variant="h6"
+					component="h1"
+					sx={{ flexGrow: 1, textAlign: 'center' }}
+				>
 					Showing {totalVisibleSubjects} of 40
 				</Typography>
 				<Tooltip
@@ -101,11 +91,17 @@ export default function TopBar() {
 					</IconButton>
 				</Tooltip>
 			</Toolbar>
-			<Hidden mdDown>
-				<Toolbar className={styles.filters}>
+			{!smDown && showFilters && (
+				<Toolbar
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						top: (theme) => theme.spacing(-1),
+					}}
+				>
 					<Filters smDown={smDown} />
 				</Toolbar>
-			</Hidden>
-		</AppBar>
+			)}
+		</StyledAppBar>
 	)
 }

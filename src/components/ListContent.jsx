@@ -1,24 +1,8 @@
 import { Collapse } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector } from 'react-redux'
 
-const useStyles = makeStyles((theme) => ({
-	wrapper: {
-		display: 'flex',
-		justifyContent: 'center',
-	},
-	wrapperInner: {
-		maxWidth: theme.mixins.subjectDrawerContents.maxWidth,
-		padding: theme.spacing(1, 2),
-	},
-}))
-
-export default function ListContent(props) {
-	const { number, children } = props
-
-	const styles = useStyles(props)
-
+export default function ListContent({ number, children }) {
 	const openSections = useSelector((state) => state.openSections)
 
 	return (
@@ -26,7 +10,16 @@ export default function ListContent(props) {
 			in={openSections.includes(number)}
 			timeout="auto"
 			component="article"
-			classes={{ wrapper: styles.wrapper, wrapperInner: styles.wrapperInner }}
+			sx={{
+				'.MuiCollapse-wrapper': {
+					display: 'flex',
+					justifyContent: 'center',
+				},
+				'.MuiCollapse-wrapperInner': {
+					maxWidth: (theme) => theme.mixins.subjectDrawerContents.maxWidth,
+					padding: (theme) => theme.spacing(1, 2),
+				},
+			}}
 		>
 			{children}
 		</Collapse>

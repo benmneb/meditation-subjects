@@ -9,26 +9,8 @@ import {
 	OutlinedInput,
 	Select,
 } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector } from 'react-redux'
-
-const useStyles = makeStyles((theme) => ({
-	formControl: {
-		width: 200,
-		minWidth: 185,
-	},
-	select: {
-		borderRadius: theme.shape.borderRadius,
-		'&:focus': {
-			borderRadius: theme.shape.borderRadius,
-		},
-	},
-	menuItemRoot: {
-		paddingTop: 3,
-		paddingBottom: 3,
-	},
-}))
 
 function styled(camelCase) {
 	return camelCase
@@ -43,8 +25,6 @@ function styled(camelCase) {
 export default function FiltersSelect(props) {
 	const { handleChange, filter, multiSelect } = props
 
-	const styles = useStyles()
-
 	const activeFilters = useSelector((state) => state.activeFilters)
 	const filters = useSelector((state) => state.filters)
 
@@ -55,7 +35,10 @@ export default function FiltersSelect(props) {
 			variant="outlined"
 			size="small"
 			margin="dense"
-			className={styles.formControl}
+			sx={{
+				width: 200,
+				minWidth: 185,
+			}}
 		>
 			<InputLabel id={`${filter}-label`}>{styledFilter}</InputLabel>
 			<Select
@@ -63,7 +46,14 @@ export default function FiltersSelect(props) {
 				labelId={`${filter}-label`}
 				value={multiSelect ? [...activeFilters[filter]] : activeFilters[filter]}
 				onChange={(event) => handleChange(event, `${filter}`)}
-				classes={{ select: styles.select }}
+				sx={{
+					'.MuiSelect-select': {
+						borderRadius: 1,
+						'&:focus': {
+							borderRadius: 1,
+						},
+					},
+				}}
 				// single select
 				label={!multiSelect && styledFilter}
 				// multi select
@@ -83,7 +73,14 @@ export default function FiltersSelect(props) {
 					<MenuItem
 						key={type}
 						value={type}
-						classes={{ root: multiSelect && styles.menuItemRoot }}
+						sx={{
+							...(multiSelect && {
+								'.MuiMenuItem-root': {
+									paddingTop: 3,
+									paddingBottom: 3,
+								},
+							}),
+						}}
 					>
 						{multiSelect && (
 							<Checkbox

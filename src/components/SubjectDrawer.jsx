@@ -1,5 +1,4 @@
 import { SwipeableDrawer } from '@mui/material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -10,15 +9,7 @@ import {
 	showSubjectDrawer,
 } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	paper: {
-		height: '97%',
-		borderRadius: theme.spacing(2, 2, 0, 0),
-	},
-}))
-
 export default function SubjectDrawer() {
-	const styles = useStyles()
 	const dispatch = useDispatch()
 
 	const isSubjectDrawOpen = useSelector((state) => state.showSubjectDrawer)
@@ -34,10 +25,18 @@ export default function SubjectDrawer() {
 		dispatch(resetSubjectDrawerState())
 	}
 
+	// TODO: sort this out
+	if (!subject) return null
+
 	return (
 		<SwipeableDrawer
 			anchor="bottom"
-			classes={{ paper: styles.paper }}
+			sx={{
+				'.MuiDrawer-paper': {
+					height: '97%',
+					borderRadius: (theme) => theme.spacing(2, 2, 0, 0),
+				},
+			}}
 			disableDiscovery
 			disableSwipeToOpen
 			open={isSubjectDrawOpen}

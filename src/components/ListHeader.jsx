@@ -1,26 +1,17 @@
-import { Box, ListItem, ListItemText } from '@mui/material'
+import { ListItem, ListItemText, styled } from '@mui/material'
 import { ExpandLessRounded, ExpandMoreRounded } from '@mui/icons-material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
 import { toggleExpandSection } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	listItemRoot: {
-		justifyContent: 'center',
-	},
-	listItemInner: {
-		display: 'flex',
-		alignItems: 'center',
-		width: theme.mixins.subjectDrawerContents.maxWidth,
-	},
+const ListItemInner = styled('div')(({ theme }) => ({
+	display: 'flex',
+	alignItems: 'center',
+	width: theme.mixins.subjectDrawerContents.maxWidth,
 }))
 
-export default function ListHeader(props) {
-	const { number, primary, secondary } = props
-
-	const styles = useStyles()
+export default function ListHeader({ number, primary, secondary }) {
 	const dispatch = useDispatch()
 
 	const openSections = useSelector((state) => state.openSections)
@@ -30,9 +21,9 @@ export default function ListHeader(props) {
 			button
 			onClick={() => dispatch(toggleExpandSection(number))}
 			component="header"
-			classes={{ root: styles.listItemRoot }}
+			sx={{ justifyContent: 'center' }}
 		>
-			<Box className={styles.listItemInner}>
+			<ListItemInner>
 				<ListItemText
 					primary={primary}
 					secondary={secondary}
@@ -44,7 +35,7 @@ export default function ListHeader(props) {
 				) : (
 					<ExpandMoreRounded />
 				)}
-			</Box>
+			</ListItemInner>
 		</ListItem>
 	)
 }

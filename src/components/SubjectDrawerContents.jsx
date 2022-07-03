@@ -12,13 +12,13 @@ import {
 	Typography,
 	IconButton,
 	Tooltip,
+	styled,
 } from '@mui/material'
 import {
 	CloseRounded,
 	ExpandLessRounded,
 	ExpandMoreRounded,
 } from '@mui/icons-material'
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -35,61 +35,27 @@ import {
 	toggleExpandSuppDetails,
 } from '../store'
 
-const useStyles = makeStyles((theme) => ({
-	appBar: {
-		height: 120,
-		top: 'auto',
-		borderRadius: theme.spacing(2, 2, 0, 0),
-		backgroundColor: (props) => props?.color,
-	},
-	toolbar: {
-		height: '100%',
-		textAlign: 'center',
-		color: (props) =>
-			props?.color && theme.palette.getContrastText(props?.color),
-		[theme.breakpoints.only('xs')]: {
-			textAlign: 'left',
-		},
-	},
-	title: {
-		marginLeft: theme.spacing(2),
-		flex: 1,
-	},
-	collapse: {
-		margin: theme.spacing(2),
-	},
-	listItemRoot: {
-		justifyContent: 'center',
-	},
-	listItemInner: {
-		display: 'flex',
-		alignItems: 'center',
-		width: theme.mixins.subjectDrawerContents.maxWidth,
-	},
-	wrapper: {
-		display: 'flex',
-		justifyContent: 'center',
-		height: '100%',
-	},
-	wrapperInner: {
-		maxWidth: theme.mixins.subjectDrawerContents.maxWidth,
-		padding: theme.spacing(1, 2),
-	},
-	buttonBaseRoot: {
-		borderRadius: theme.shape.borderRadius,
-	},
-	noBefore: {
-		'&::before': {
-			backgroundColor: 'transparent',
-		},
-	},
-	borderRadius: {
-		borderRadius: theme.spacing(2, 2, 0, 0),
+const StyledAppBar = styled(AppBar, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	height: 120,
+	top: 'auto',
+	borderRadius: theme.spacing(2, 2, 0, 0),
+	backgroundColor: bgColor,
+}))
+
+const StyledToolbar = styled(Toolbar, {
+	shouldForwardProp: (prop) => prop !== 'bgColor',
+})(({ theme, bgColor }) => ({
+	height: '100%',
+	textAlign: 'center',
+	color: theme.palette.getContrastText(bgColor),
+	[theme.breakpoints.only('xs')]: {
+		textAlign: 'left',
 	},
 }))
 
-export default function SubjectDrawerContents(props) {
-	const styles = useStyles(props)
+export default function SubjectDrawerContents({ color }) {
 	const dispatch = useDispatch()
 
 	const subject = useSelector((state) => state.subject)
@@ -104,9 +70,13 @@ export default function SubjectDrawerContents(props) {
 
 	return (
 		<>
-			<AppBar position="fixed" className={styles.appBar}>
-				<Toolbar disableGutters className={styles.toolbar}>
-					<Typography variant="h4" component="h1" className={styles.title}>
+			<StyledAppBar position="fixed" bgColor={color}>
+				<StyledToolbar disableGutters bgColor={color}>
+					<Typography
+						variant="h4"
+						component="h1"
+						sx={{ flex: 1, marginLeft: 2 }}
+					>
 						{subject?.longName}
 						<Box component="span" fontStyle="italic">
 							<Typography variant="body1">
@@ -124,8 +94,8 @@ export default function SubjectDrawerContents(props) {
 							<CloseRounded />
 						</IconButton>
 					</Tooltip>
-				</Toolbar>
-			</AppBar>
+				</StyledToolbar>
+			</StyledAppBar>
 			<Box minHeight={120} />
 			<List component="section">
 				<ListHeader
@@ -143,7 +113,7 @@ export default function SubjectDrawerContents(props) {
 									onClick={() =>
 										dispatch(toggleExpandPrepDetails(subChap.text))
 									}
-									classes={{ root: styles.buttonBaseRoot }}
+									sx={{ borderRadius: (theme) => theme.shape.borderRadius }}
 								>
 									<ListItemText
 										primary={subChap.text}
@@ -191,7 +161,7 @@ export default function SubjectDrawerContents(props) {
 									onClick={() =>
 										dispatch(toggleExpandSuppDetails(chapter.text))
 									}
-									classes={{ root: styles.buttonBaseRoot }}
+									sx={{ borderRadius: (theme) => theme.shape.borderRadius }}
 								>
 									<ListItemText
 										primary={chapter.text}
