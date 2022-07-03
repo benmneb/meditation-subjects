@@ -1,7 +1,6 @@
-import { Button, Fade, Typography } from '@mui/material'
+import { Button, Fade, Typography, styled } from '@mui/material'
 import { RotateLeftRounded } from '@mui/icons-material'
 import { useTheme } from '@mui/material/styles'
-import { styled } from '@mui/system'
 
 import { useSelector, useDispatch } from 'react-redux'
 
