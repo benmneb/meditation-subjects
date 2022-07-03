@@ -1,4 +1,4 @@
-export { default as Hero } from './Hero nimitta'
+export { default as Hero } from './Hero'
 export { default as TopBar } from './TopBar'
 export { default as Filters } from './Filters'
 export { default as FiltersDrawer } from './FiltersDrawer'
