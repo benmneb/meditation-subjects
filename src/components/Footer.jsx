@@ -17,19 +17,19 @@ const NoResults = styled('div')(({ theme }) => ({
 }))
 
 const Emoji = styled('span')(({ theme }) => ({
-	display: 'inline-block',
-	animation: `$pulse 3s infinite`,
 	'@keyframes pulse': {
 		'0%': {
 			animationTimingFunction: theme.transitions.easing.easeIn,
 		},
 		'50%': {
-			transform: 'scale(1.15)',
+			transform: 'scale(1.10)',
 		},
 		'100%': {
 			animationTimingFunction: theme.transitions.easing.easeIn,
 		},
 	},
+	display: 'inline-block',
+	animation: 'pulse 5s infinite',
 }))
 
 export default function Footer() {
@@ -56,7 +56,7 @@ export default function Footer() {
 			{!totalVisibleSubjects ? (
 				<NoResults>
 					<Typography variant="h6" paragraph>
-						No meditation subjects match the current filters.
+						No subjects match the current filters.
 					</Typography>
 					<Typography paragraph>
 						You can <b>1)</b>{' '}
