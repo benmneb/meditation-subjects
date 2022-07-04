@@ -27,13 +27,7 @@ import ListHeader from './ListHeader'
 
 import { FormattedText } from '../utils'
 import { preparatory, supplementary } from '../data/'
-import {
-	chooseSubject,
-	resetSubjectDrawerState,
-	showSubjectDrawer,
-	toggleExpandPrepDetails,
-	toggleExpandSuppDetails,
-} from '../store'
+import { toggleExpandPrepDetails, toggleExpandSuppDetails } from '../store'
 
 const StyledAppBar = styled(AppBar, {
 	shouldForwardProp: (prop) => prop !== 'bgColor',
@@ -45,33 +39,27 @@ const StyledAppBar = styled(AppBar, {
 }))
 
 const StyledToolbar = styled(Toolbar, {
-	shouldForwardProp: (prop) => prop !== 'bgColor',
-})(({ theme, bgColor }) => ({
+	shouldForwardProp: (prop) => prop !== 'color',
+})(({ theme, color }) => ({
 	height: '100%',
 	textAlign: 'center',
-	color: theme.palette.getContrastText(bgColor),
+	color: theme.palette.getContrastText(color),
 	[theme.breakpoints.only('xs')]: {
 		textAlign: 'left',
 	},
 }))
 
-export default function SubjectDrawerContents({ color }) {
+export default function SubjectDrawerContents({ color, handleClose }) {
 	const dispatch = useDispatch()
 
 	const subject = useSelector((state) => state.subject)
 	const openPrepDetails = useSelector((state) => state.openPrepDetails)
 	const openSuppDetails = useSelector((state) => state.openSuppDetails)
 
-	function handleCloseDrawer() {
-		dispatch(showSubjectDrawer(false))
-		dispatch(chooseSubject(null))
-		dispatch(resetSubjectDrawerState())
-	}
-
 	return (
 		<>
 			<StyledAppBar position="fixed" bgColor={color}>
-				<StyledToolbar disableGutters bgColor={color}>
+				<StyledToolbar disableGutters color={color}>
 					<Typography
 						variant="h4"
 						component="h1"
@@ -88,7 +76,7 @@ export default function SubjectDrawerContents({ color }) {
 						<IconButton
 							color="inherit"
 							autoFocus
-							onClick={handleCloseDrawer}
+							onClick={handleClose}
 							size="large"
 						>
 							<CloseRounded />

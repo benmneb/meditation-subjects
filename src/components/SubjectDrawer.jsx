@@ -21,12 +21,12 @@ export default function SubjectDrawer() {
 
 	function handleClose() {
 		dispatch(showSubjectDrawer(false))
+	}
+
+	function handleExited() {
 		dispatch(chooseSubject(null))
 		dispatch(resetSubjectDrawerState())
 	}
-
-	// TODO: sort this out
-	if (!subject) return null
 
 	return (
 		<SwipeableDrawer
@@ -42,8 +42,11 @@ export default function SubjectDrawer() {
 			open={isSubjectDrawOpen}
 			onOpen={handleOpen}
 			onClose={handleClose}
+			SlideProps={{
+				onExited: handleExited,
+			}}
 		>
-			<SubjectDrawerContents color={subject?.color} />
+			<SubjectDrawerContents color={subject?.color} handleClose={handleClose} />
 		</SwipeableDrawer>
 	)
 }
